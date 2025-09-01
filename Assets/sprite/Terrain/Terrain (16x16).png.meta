@@ -249,7 +249,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_5
+      name: GrassTopLeft
       rect:
         serializedVersion: 2
         x: 96
@@ -271,7 +271,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_6
+      name: GrassTopMid
       rect:
         serializedVersion: 2
         x: 112
@@ -293,7 +293,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_7
+      name: GrassTopRight
       rect:
         serializedVersion: 2
         x: 128
@@ -623,7 +623,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_22
+      name: GrassMidLeft
       rect:
         serializedVersion: 2
         x: 96
@@ -645,7 +645,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_23
+      name: GrassMidMid
       rect:
         serializedVersion: 2
         x: 112
@@ -667,7 +667,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_24
+      name: GrassMidRight
       rect:
         serializedVersion: 2
         x: 128
@@ -953,7 +953,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_37
+      name: GrassMidLef
       rect:
         serializedVersion: 2
         x: 96
@@ -975,7 +975,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_38
+      name: GrassBotMid
       rect:
         serializedVersion: 2
         x: 112
@@ -997,7 +997,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_39
+      name: GrassBotRight
       rect:
         serializedVersion: 2
         x: 128
@@ -3320,6 +3320,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      GrassBotMid: 513526517
+      GrassBotRight: -832824671
+      GrassMidLef: -1697381053
+      GrassMidLeft: -1430392465
+      GrassMidMid: 1914966051
+      GrassMidRight: -163534277
+      GrassTopLeft: -8620202154233844528
+      GrassTopMid: -7517053698926566003
+      GrassTopRight: 3020870990670601969
       Terrain (16x16)_0: -4874278423985981231
       Terrain (16x16)_1: 2492004042214043949
       Terrain (16x16)_10: 5587568460378422633
@@ -3379,9 +3388,6 @@ TextureImporter:
       Terrain (16x16)_2: 8471289998749917440
       Terrain (16x16)_20: -1797237258
       Terrain (16x16)_21: 1166666066
-      Terrain (16x16)_22: -1430392465
-      Terrain (16x16)_23: 1914966051
-      Terrain (16x16)_24: -163534277
       Terrain (16x16)_25: -219710539
       Terrain (16x16)_26: 249800999
       Terrain (16x16)_27: -437912642
@@ -3395,9 +3401,6 @@ TextureImporter:
       Terrain (16x16)_34: 886814607
       Terrain (16x16)_35: 1740282853
       Terrain (16x16)_36: 937965058
-      Terrain (16x16)_37: -1697381053
-      Terrain (16x16)_38: 513526517
-      Terrain (16x16)_39: -832824671
       Terrain (16x16)_4: 4716054802376701170
       Terrain (16x16)_40: -287338046
       Terrain (16x16)_41: 1097755265
@@ -3409,7 +3412,6 @@ TextureImporter:
       Terrain (16x16)_47: -1061096837
       Terrain (16x16)_48: 1870829773
       Terrain (16x16)_49: 664387757
-      Terrain (16x16)_5: -8620202154233844528
       Terrain (16x16)_50: -2093198817
       Terrain (16x16)_51: -1038945763
       Terrain (16x16)_52: 399167146
@@ -3420,7 +3422,6 @@ TextureImporter:
       Terrain (16x16)_57: -1346866459
       Terrain (16x16)_58: 271151978
       Terrain (16x16)_59: -1077798388
-      Terrain (16x16)_6: -7517053698926566003
       Terrain (16x16)_60: -219059538
       Terrain (16x16)_61: 1731556134
       Terrain (16x16)_62: 948675502
@@ -3431,7 +3432,6 @@ TextureImporter:
       Terrain (16x16)_67: 1920180286
       Terrain (16x16)_68: -1273308590
       Terrain (16x16)_69: -346586992
-      Terrain (16x16)_7: 3020870990670601969
       Terrain (16x16)_70: 2090895090
       Terrain (16x16)_71: 570210161
       Terrain (16x16)_72: -1021814415

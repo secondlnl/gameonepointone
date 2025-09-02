@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 152296861}
   - component: {fileID: 152296862}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassBotMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -437,7 +437,7 @@ GameObject:
   m_Component:
   - component: {fileID: 708160515}
   - component: {fileID: 708160516}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassBotRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -524,9 +524,9 @@ GameObject:
   m_Component:
   - component: {fileID: 961460749}
   - component: {fileID: 961460750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Platform
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -608,7 +608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1271931597}
   - component: {fileID: 1271931598}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassTopLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -857,6 +857,9 @@ MonoBehaviour:
   JumpForce: 300
   LeftFoot: {fileID: 1760235726}
   RightFoot: {fileID: 2107027452}
+  Grounded:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &1547234282
 GameObject:
   m_ObjectHideFlags: 0
@@ -867,7 +870,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547234283}
   - component: {fileID: 1547234284}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassTopMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -954,7 +957,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1666918348}
   - component: {fileID: 1666918349}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassMidLef
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1041,7 +1044,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1718091155}
   - component: {fileID: 1718091156}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GrassTopRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}

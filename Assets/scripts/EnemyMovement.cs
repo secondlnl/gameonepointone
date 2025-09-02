@@ -4,6 +4,7 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed = 2.0f;
     [SerializeField] private float bounciness = 300f;
+    [SerializeField] private int DMGGiven = 1;
     private SpriteRenderer sr;
     void Start()
     {
@@ -21,6 +22,8 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyBlock")) MoveSpeed = -MoveSpeed;
         if (other.gameObject.CompareTag("Enemy")) MoveSpeed = -MoveSpeed;
+        if (other.gameObject.CompareTag("Player")) other.gameObject.GetComponent<movement>().TakeDMG(DMGGiven);
+
 
     }
     void OnTriggerEnter2D(Collider2D other)

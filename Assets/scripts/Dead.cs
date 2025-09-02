@@ -8,7 +8,8 @@ public class Dead : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            other.transform.position = SpawnPosition.transform.position;
+                   other.transform.position = SpawnPosition.transform.position;
+
             other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         }
     }

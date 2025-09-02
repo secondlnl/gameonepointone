@@ -6,15 +6,20 @@ public class movement : MonoBehaviour
     [SerializeField] private float JumpForce = 300f;
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
+    [SerializeField] private Transform SpawnPosition;
+
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
     private bool OnGround;
+    [SerializeField] private int StartingHealth = 5;
+    private int CurrentHealth = 0;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
 
     void Start()
     {
+        CurrentHealth = StartingHealth;
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -45,11 +50,23 @@ public class movement : MonoBehaviour
     {
         rb.AddForce(new Vector2(0, JumpForce));
     }
+    public void TakeDMG(int DMGamount)
+    {
+        CurrentHealth -= DMGamount;
+        if (CurrentHealth <= 0) Respawn();
+        
+    }
+    private void Respawn()
+    {
+        transform.position = SpawnPosition.transform.position;
+        CurrentHealth = StartingHealth;
+        rb.linearVelocity = Vector2.zero;
+    }
     private bool CheckGround()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, Grounded);
         RaycastHit2D RightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, Grounded);
         if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || RightHit.collider != null && RightHit.collider.CompareTag("Ground")) return true; else return false;
-        
+
     }
 }

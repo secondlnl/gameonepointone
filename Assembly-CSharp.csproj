@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\Dead.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

@@ -11,20 +11,26 @@ public class movement : MonoBehaviour
     private bool OnGround;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
+    private Animator anim;
 
     void Start()
     {
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     void Update()
     {
         horizontalValue = Input.GetAxis("Horizontal");
         if (horizontalValue < 0) FlipSprite(true);
-        if (horizontalValue < 0) FlipSprite(false);
+        if (horizontalValue > 0) FlipSprite(false);
 
         if (Input.GetButtonDown("Jump") && CheckGround() == true) Jump();
+
+        anim.SetFloat("MoveSpeed", Mathf.Abs(rb.linearVelocityX));
+        anim.SetFloat("VerticalSpeed", rb.linearVelocityY);
+        anim.SetBool("Grounded", CheckGround());
     }
     void FixedUpdate()
     {

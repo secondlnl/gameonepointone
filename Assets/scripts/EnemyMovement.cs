@@ -4,6 +4,8 @@ public class EnemyMovement : MonoBehaviour
 {
     [SerializeField] private float MoveSpeed = 2.0f;
     [SerializeField] private float bounciness = 300f;
+    [SerializeField] private float KnockbackForce = 400f;
+    [SerializeField] private float Updraft = 180f;
     [SerializeField] private int DMGGiven = 1;
     private SpriteRenderer sr;
     void Start()
@@ -22,7 +24,16 @@ public class EnemyMovement : MonoBehaviour
     {
         if (other.gameObject.CompareTag("EnemyBlock")) MoveSpeed = -MoveSpeed;
         if (other.gameObject.CompareTag("Enemy")) MoveSpeed = -MoveSpeed;
-        if (other.gameObject.CompareTag("Player")) other.gameObject.GetComponent<movement>().TakeDMG(DMGGiven);
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<movement>().TakeDMG(DMGGiven);
+
+            if (other.transform.position.x > transform.position.x)
+            {
+                other.gameObject.GetComponent<movement>().TakeKnockback(KnockbackForce, Updraft);
+            }
+            else { other.gameObject.GetComponent<movement>().TakeKnockback(-KnockbackForce, Updraft); }
+        }
 
 
     }

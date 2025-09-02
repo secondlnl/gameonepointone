@@ -8,6 +8,7 @@ TagManager:
   - KillZone
   - EnemyBlock
   - Enemy
+  - Cherry
   layers:
   - Default
   - TransparentFX

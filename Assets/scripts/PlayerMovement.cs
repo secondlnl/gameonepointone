@@ -15,14 +15,17 @@ public class movement : MonoBehaviour
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
     private bool OnGround;
+    private bool canMove;
     [SerializeField] private int StartingHealth = 5;
     private int CurrentHealth = 0;
+    private int CherryCount = 0;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
 
     void Start()
     {
+        canMove = true;
         CurrentHealth = StartingHealth;
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
@@ -44,8 +47,17 @@ public class movement : MonoBehaviour
     }
     void FixedUpdate()
     {
+        if (canMove == false) return;
         rb.linearVelocity = new Vector2((horizontalValue * Movementspeed * Time.deltaTime), rb.linearVelocityY);
 
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Cherry"))
+        {
+            Destroy(other.gameObject);
+            CherryCount++;
+        }   
     }
     private void FlipSprite(bool Direction)
     {
@@ -62,6 +74,16 @@ public class movement : MonoBehaviour
 
         if (CurrentHealth <= 0) Respawn();
 
+    }
+    public void TakeKnockback(float knockbackForce, float updraft)
+    {
+        canMove = false;
+        rb.AddForce(new Vector2(knockbackForce, updraft));
+        Invoke("CanMoveAgain", 0.25f);
+    }
+    private void CanMoveAgain()
+    {
+        canMove = true;
     }
     private void Respawn()
     {
@@ -85,4 +107,5 @@ public class movement : MonoBehaviour
         if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || RightHit.collider != null && RightHit.collider.CompareTag("Ground")) return true; else return false;
 
     }
+
 }

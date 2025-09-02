@@ -4,6 +4,7 @@ public class movement : MonoBehaviour
 {
     [SerializeField] private float Movementspeed = 1f;
     [SerializeField] private float JumpForce = 300f;
+    [SerializeField] private Transform LeftFoot, RightFoot;
     private float horizontalValue = 0f;
     private Rigidbody2D rb;
     private SpriteRenderer srr;

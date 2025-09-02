@@ -5,7 +5,6 @@ public class movement : MonoBehaviour
     [SerializeField] private float Movementspeed = 1f;
     [SerializeField] private float JumpForce = 300f;
     private float horizontalValue = 0f;
-    private float verticalValue = 0f;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
 
@@ -18,9 +17,10 @@ public class movement : MonoBehaviour
     void Update()
     {
         horizontalValue = Input.GetAxis("Horizontal");
-        verticalValue = Input.GetAxis("Vertical");
         if (horizontalValue < 0) FlipSprite(true);
         if (horizontalValue < 0) FlipSprite(false);
+
+        if (Input.GetButtonDown("Jump")) Jump();
     }
     void FixedUpdate()
     {
@@ -30,5 +30,9 @@ public class movement : MonoBehaviour
     private void FlipSprite(bool Direction)
     {
         srr.flipX = Direction;
+    }
+    private void Jump()
+    {
+        rb.AddForce(new Vector2(0, JumpForce));
     }
 }

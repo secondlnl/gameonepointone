@@ -51,6 +51,7 @@
     <Compile Include="Assets\scripts\Dead.cs" />
     <Compile Include="Assets\scripts\PlayerMovement.cs" />
     <Compile Include="Assets\scripts\camerafollow.cs" />
+    <Compile Include="Assets\scripts\EnemyMovement.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

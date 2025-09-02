@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
@@ -7,6 +8,9 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
     [SerializeField] private Transform SpawnPosition;
+    [SerializeField] private Slider healthSlider;
+    [SerializeField] private Image fillcolor;
+    [SerializeField] private Color greenHealth, RedHealth;
 
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
@@ -36,6 +40,7 @@ public class movement : MonoBehaviour
         anim.SetFloat("MoveSpeed", Mathf.Abs(rb.linearVelocityX));
         anim.SetFloat("VerticalSpeed", rb.linearVelocityY);
         anim.SetBool("Grounded", CheckGround());
+
     }
     void FixedUpdate()
     {
@@ -53,14 +58,25 @@ public class movement : MonoBehaviour
     public void TakeDMG(int DMGamount)
     {
         CurrentHealth -= DMGamount;
+        UpdateHealthBar();
+
         if (CurrentHealth <= 0) Respawn();
-        
+
     }
     private void Respawn()
     {
-        transform.position = SpawnPosition.transform.position;
+        fillcolor.color = greenHealth;
         CurrentHealth = StartingHealth;
+        UpdateHealthBar();
+        transform.position = SpawnPosition.transform.position;
         rb.linearVelocity = Vector2.zero;
+    }
+    private void UpdateHealthBar()
+    {
+        healthSlider.value = CurrentHealth;
+
+        if (CurrentHealth >= 2) fillcolor.color = greenHealth; else fillcolor.color = RedHealth;
+
     }
     private bool CheckGround()
     {

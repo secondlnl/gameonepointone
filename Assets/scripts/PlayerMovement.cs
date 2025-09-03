@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -8,9 +9,11 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
     [SerializeField] private Transform SpawnPosition;
+
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
     [SerializeField] private Color greenHealth, RedHealth;
+    [SerializeField] private TMP_Text cherryText;
 
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
@@ -25,6 +28,7 @@ public class movement : MonoBehaviour
 
     void Start()
     {
+        cherryText.text = CherryCount.ToString(); // CHANGED
         canMove = true;
         CurrentHealth = StartingHealth;
         srr = GetComponent<SpriteRenderer>();
@@ -34,6 +38,7 @@ public class movement : MonoBehaviour
 
     void Update()
     {
+        print(CurrentHealth);
         horizontalValue = Input.GetAxis("Horizontal");
         if (horizontalValue < 0) FlipSprite(true);
         if (horizontalValue > 0) FlipSprite(false);
@@ -57,7 +62,14 @@ public class movement : MonoBehaviour
         {
             Destroy(other.gameObject);
             CherryCount++;
-        }   
+            cherryText.text = CherryCount.ToString();
+
+        }
+        if (other.CompareTag("Health"))
+        {
+            HealUp(other.gameObject);
+
+        }
     }
     private void FlipSprite(bool Direction)
     {
@@ -92,6 +104,17 @@ public class movement : MonoBehaviour
         UpdateHealthBar();
         transform.position = SpawnPosition.transform.position;
         rb.linearVelocity = Vector2.zero;
+    }
+    private void HealUp(GameObject healthPickUp)
+    {
+        if (CurrentHealth >= StartingHealth) return;
+        else
+        {
+            int healthToRestore = healthPickUp.GetComponent<health>().HealPoints;
+            CurrentHealth += healthToRestore; UpdateHealthBar(); Destroy(healthPickUp);
+
+            if (CurrentHealth >= StartingHealth) CurrentHealth = StartingHealth;
+        }
     }
     private void UpdateHealthBar()
     {

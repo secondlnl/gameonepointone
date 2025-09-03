@@ -9,6 +9,7 @@ TagManager:
   - EnemyBlock
   - Enemy
   - Cherry
+  - Health
   layers:
   - Default
   - TransparentFX

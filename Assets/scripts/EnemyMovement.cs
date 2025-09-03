@@ -43,7 +43,7 @@ public class EnemyMovement : MonoBehaviour
         {
             other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(other.GetComponent<Rigidbody2D>().linearVelocityX, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
-        }
         Destroy(gameObject);
+        }
     }
 }

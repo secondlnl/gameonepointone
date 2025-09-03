@@ -107,10 +107,14 @@ public class movement : MonoBehaviour
     }
     private void HealUp(GameObject healthPickUp)
     {
-        if (CurrentHealth >= StartingHealth) return;
+        /* 
+        TUT 9 Fix
+        Heal can't be picked up if it would heal too much  
+        */
+        int healthToRestore = healthPickUp.GetComponent<health>().HealPoints; 
+        if (CurrentHealth >= StartingHealth || (CurrentHealth + healthToRestore) > StartingHealth) return;
         else
         {
-            int healthToRestore = healthPickUp.GetComponent<health>().HealPoints;
             CurrentHealth += healthToRestore; UpdateHealthBar(); Destroy(healthPickUp);
 
             if (CurrentHealth >= StartingHealth) CurrentHealth = StartingHealth;

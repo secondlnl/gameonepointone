@@ -1965,9 +1965,11 @@ GameObject:
   - component: {fileID: 110545738}
   - component: {fileID: 110545737}
   - component: {fileID: 110545736}
-  m_Layer: 0
+  - component: {fileID: 110545740}
+  - component: {fileID: 110545739}
+  m_Layer: 10
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2049,7 +2051,7 @@ Transform:
   m_GameObject: {fileID: 110545735}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 36.64, y: -1.94, z: 0}
+  m_LocalPosition: {x: 36.64, y: -1.88, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2060,6 +2062,64 @@ Transform:
   - {fileID: 790183899}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &110545739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110545735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef384f01c646a9142a632df9daf9dac6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &110545740
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 110545735}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -2.26, y: 1.11}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.86, y: 2.34}
+  m_EdgeRadius: 0
 --- !u!1 &111618309
 GameObject:
   m_ObjectHideFlags: 0
@@ -4970,7 +5030,7 @@ GameObject:
   m_Component:
   - component: {fileID: 368177216}
   - component: {fileID: 368177217}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallBot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6602,7 +6662,7 @@ GameObject:
   m_Component:
   - component: {fileID: 503331894}
   - component: {fileID: 503331895}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallMid (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10428,7 +10488,7 @@ GameObject:
   m_Component:
   - component: {fileID: 790183899}
   - component: {fileID: 790183900}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallTop
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15197,7 +15257,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1124909474}
   - component: {fileID: 1124909475}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallMid (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27345,7 +27405,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945167477}
   - component: {fileID: 1945167478}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WallMid
   m_TagString: Untagged
   m_Icon: {fileID: 0}

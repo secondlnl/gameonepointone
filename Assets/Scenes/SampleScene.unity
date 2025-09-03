@@ -18759,7 +18759,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Please me get back my 10 delious cherries and leave them by the trophy!!!
+  m_text: Please me get back my 10 delious cherries and leave them by the flag!!!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65891bebb9098c45836a2f58bf30ffb, type: 2}
   m_sharedMaterial: {fileID: -9020848041808832747, guid: f65891bebb9098c45836a2f58bf30ffb, type: 2}

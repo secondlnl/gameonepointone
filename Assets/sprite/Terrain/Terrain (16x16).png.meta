@@ -821,7 +821,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_31
+      name: platformLeft
       rect:
         serializedVersion: 2
         x: 272
@@ -843,7 +843,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_32
+      name: PlatformMid
       rect:
         serializedVersion: 2
         x: 288
@@ -865,7 +865,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_33
+      name: PlatformRight
       rect:
         serializedVersion: 2
         x: 304
@@ -3329,6 +3329,8 @@ TextureImporter:
       GrassTopLeft: -8620202154233844528
       GrassTopMid: -7517053698926566003
       GrassTopRight: 3020870990670601969
+      PlatformMid: 1173597561
+      PlatformRight: -873849799
       Terrain (16x16)_0: -4874278423985981231
       Terrain (16x16)_1: 2492004042214043949
       Terrain (16x16)_10: 5587568460378422633
@@ -3395,9 +3397,6 @@ TextureImporter:
       Terrain (16x16)_29: 964043657
       Terrain (16x16)_3: 397718093594370940
       Terrain (16x16)_30: 1492621556
-      Terrain (16x16)_31: -890565529
-      Terrain (16x16)_32: 1173597561
-      Terrain (16x16)_33: -873849799
       Terrain (16x16)_34: 886814607
       Terrain (16x16)_35: 1740282853
       Terrain (16x16)_36: 937965058
@@ -3464,6 +3463,7 @@ TextureImporter:
       Terrain (16x16)_97: 1606829220
       Terrain (16x16)_98: 193651666
       Terrain (16x16)_99: 845190510
+      platformLeft: -890565529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

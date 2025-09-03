@@ -21,7 +21,7 @@ public class movement : MonoBehaviour
     private bool canMove;
     [SerializeField] private int StartingHealth = 5;
     private int CurrentHealth = 0;
-    private int CherryCount = 0;
+    public int CherryCount = 0;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;

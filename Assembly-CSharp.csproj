@@ -52,6 +52,7 @@
     <Compile Include="Assets\scripts\PlayerMovement.cs" />
     <Compile Include="Assets\scripts\camerafollow.cs" />
     <Compile Include="Assets\scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\QuestCheckpoint.cs" />
     <Compile Include="Assets\scripts\health.cs" />
     <Compile Include="Assets\questmaskman.cs" />
   </ItemGroup>

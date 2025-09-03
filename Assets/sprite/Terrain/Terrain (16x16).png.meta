@@ -1437,7 +1437,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_59
+      name: WallTop
       rect:
         serializedVersion: 2
         x: 240
@@ -1855,7 +1855,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_78
+      name: WallMid
       rect:
         serializedVersion: 2
         x: 240
@@ -2163,7 +2163,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_92
+      name: WallBot
       rect:
         serializedVersion: 2
         x: 240
@@ -3420,7 +3420,6 @@ TextureImporter:
       Terrain (16x16)_56: 1244335361
       Terrain (16x16)_57: -1346866459
       Terrain (16x16)_58: 271151978
-      Terrain (16x16)_59: -1077798388
       Terrain (16x16)_60: -219059538
       Terrain (16x16)_61: 1731556134
       Terrain (16x16)_62: 948675502
@@ -3439,7 +3438,6 @@ TextureImporter:
       Terrain (16x16)_75: -766866737
       Terrain (16x16)_76: 264247390
       Terrain (16x16)_77: 1234751960
-      Terrain (16x16)_78: 451228769
       Terrain (16x16)_79: 2004113002
       Terrain (16x16)_8: 1685935324672158413
       Terrain (16x16)_80: 1781110120
@@ -3455,7 +3453,6 @@ TextureImporter:
       Terrain (16x16)_9: 8022139226935704013
       Terrain (16x16)_90: -1803663611
       Terrain (16x16)_91: -1442750533
-      Terrain (16x16)_92: 1072074188
       Terrain (16x16)_93: -1165232252
       Terrain (16x16)_94: 34481429
       Terrain (16x16)_95: 905627994
@@ -3463,6 +3460,9 @@ TextureImporter:
       Terrain (16x16)_97: 1606829220
       Terrain (16x16)_98: 193651666
       Terrain (16x16)_99: 845190510
+      WallBot: 1072074188
+      WallMid: 451228769
+      WallTop: -1077798388
       platformLeft: -890565529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

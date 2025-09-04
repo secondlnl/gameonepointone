@@ -103,8 +103,10 @@ public class movement : MonoBehaviour
     }
     public void TakeKnockback(float knockbackForce, float updraft)
     {
+        anim.SetTrigger("hit");
         canMove = false;
         rb.AddForce(new Vector2(knockbackForce, updraft));
+        Invoke("anim.SetTrigger('hitdone')", 0.25f);
         Invoke("CanMoveAgain", 0.25f);
     }
     private void CanMoveAgain()

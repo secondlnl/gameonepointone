@@ -51,6 +51,7 @@
     <Compile Include="Assets\scripts\Dead.cs" />
     <Compile Include="Assets\scripts\WallHack.cs" />
     <Compile Include="Assets\scripts\PlayerMovement.cs" />
+    <Compile Include="Assets\scripts\DestroyAfterLivetime.cs" />
     <Compile Include="Assets\scripts\Trampo.cs" />
     <Compile Include="Assets\scripts\camerafollow.cs" />
     <Compile Include="Assets\scripts\PlatformMove.cs" />

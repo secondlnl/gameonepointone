@@ -12,6 +12,7 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform SpawnPosition;
     [SerializeField] private AudioClip[] JumpSounds;
     [SerializeField] private AudioClip PickupSound;
+    [SerializeField] private GameObject CherryPart;
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
@@ -65,11 +66,13 @@ public class movement : MonoBehaviour
     {
         if (other.CompareTag("Cherry"))
         {
+
             Destroy(other.gameObject);
             CherryCount++;
             cherryText.text = CherryCount.ToString(); //
-            audi.pitch = Random.Range(0.8f,1.2f);
+            audi.pitch = Random.Range(0.8f, 1.2f);
             audi.PlayOneShot(PickupSound, 0.5f);
+            Instantiate(CherryPart, other.transform.position, Quaternion.identity);
 
         }
         if (other.CompareTag("Health"))
@@ -141,6 +144,8 @@ public class movement : MonoBehaviour
     private bool CheckGround()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, Grounded);
+        print(leftHit.collider.tag);
+
         RaycastHit2D RightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, Grounded);
         if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || RightHit.collider != null && RightHit.collider.CompareTag("Ground")) return true; else return false;
 

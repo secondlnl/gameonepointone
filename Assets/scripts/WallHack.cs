@@ -10,7 +10,7 @@ public class WallHack : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && HasPlayed == false)
         {
             HasPlayed = true;
             anim.SetTrigger("move");

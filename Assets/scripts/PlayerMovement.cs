@@ -1,3 +1,4 @@
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,8 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
     [SerializeField] private Transform SpawnPosition;
+    [SerializeField] private AudioClip[] JumpSounds;
+    [SerializeField] private AudioClip PickupSound;
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
@@ -25,6 +28,7 @@ public class movement : MonoBehaviour
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
+    private AudioSource audi;
 
     void Start()
     {
@@ -34,11 +38,12 @@ public class movement : MonoBehaviour
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
+        audi = GetComponent<AudioSource>();
     }
 
     void Update()
     {
-        print(CurrentHealth);
+//        print(CurrentHealth);
         horizontalValue = Input.GetAxis("Horizontal");
         if (horizontalValue < 0) FlipSprite(true);
         if (horizontalValue > 0) FlipSprite(false);
@@ -62,7 +67,9 @@ public class movement : MonoBehaviour
         {
             Destroy(other.gameObject);
             CherryCount++;
-            cherryText.text = CherryCount.ToString();
+            cherryText.text = CherryCount.ToString(); //
+            audi.pitch = Random.Range(0.8f,1.2f);
+            audi.PlayOneShot(PickupSound, 0.5f);
 
         }
         if (other.CompareTag("Health"))
@@ -78,6 +85,9 @@ public class movement : MonoBehaviour
     private void Jump()
     {
         rb.AddForce(new Vector2(0, JumpForce));
+        int RandomValue = Random.Range(0, JumpSounds.Length /*+ 1*/);
+        print(RandomValue);
+        audi.PlayOneShot(JumpSounds[RandomValue],0.5f);
     }
     public void TakeDMG(int DMGamount)
     {
@@ -115,8 +125,9 @@ public class movement : MonoBehaviour
         if (CurrentHealth >= StartingHealth || (CurrentHealth + healthToRestore) > StartingHealth) return;
         else
         {
-            CurrentHealth += healthToRestore; UpdateHealthBar(); Destroy(healthPickUp);
-
+            CurrentHealth += healthToRestore;
+            UpdateHealthBar();
+            Destroy(healthPickUp);
             if (CurrentHealth >= StartingHealth) CurrentHealth = StartingHealth;
         }
     }

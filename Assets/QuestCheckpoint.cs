@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class QuestCheckpoint : MonoBehaviour
 {
     [SerializeField] private GameObject dialoguebox, textnotfinished, textfinished;
-    private Animator anim;
     [SerializeField] private int QuestGoal = 10;
+    [SerializeField] private int NextLevel;
+    private Animator anim;
+    private bool LoadingLevel = false;
 
     void Start()
     {
@@ -18,6 +21,8 @@ public class QuestCheckpoint : MonoBehaviour
                 textfinished.SetActive(true);
                 anim.SetTrigger("Finished");
                 // lvl CHANGE
+                Invoke("LoadLevel", 2.0f);
+                LoadingLevel = true;
             }
             else
             {
@@ -26,9 +31,12 @@ public class QuestCheckpoint : MonoBehaviour
             }
 
     }
+    private void LoadLevel() {
+        SceneManager.LoadScene(NextLevel);
+    }
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && LoadingLevel == false)
         {
             dialoguebox.SetActive(false);
             textfinished.SetActive(false);

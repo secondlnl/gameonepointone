@@ -12,7 +12,7 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform SpawnPosition;
     [SerializeField] private AudioClip[] JumpSounds;
     [SerializeField] private AudioClip PickupSound;
-    [SerializeField] private GameObject CherryPart;
+    [SerializeField] private GameObject CherryPart, JumpPart;
 
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
@@ -90,7 +90,8 @@ public class movement : MonoBehaviour
         rb.AddForce(new Vector2(0, JumpForce));
         int RandomValue = Random.Range(0, JumpSounds.Length /*+ 1*/);
         print(RandomValue);
-        audi.PlayOneShot(JumpSounds[RandomValue],0.5f);
+        audi.PlayOneShot(JumpSounds[RandomValue], 0.5f);
+        Instantiate(JumpPart, transform.position, JumpPart.transform.localRotation);
     }
     public void TakeDMG(int DMGamount)
     {

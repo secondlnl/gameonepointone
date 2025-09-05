@@ -7,6 +7,8 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 180f;
     [SerializeField] private int DMGGiven = 1;
+    [SerializeField] private AudioClip HitSound;
+    [SerializeField] private GameObject StonePart;
     private SpriteRenderer sr;
     private bool dead = false;
     void Start()
@@ -16,10 +18,10 @@ public class EnemyMovement : MonoBehaviour
     void FixedUpdate()
     {
         if (dead) return;
-            transform.Translate(new Vector2(MoveSpeed, 0) * Time.deltaTime);
+        transform.Translate(new Vector2(MoveSpeed, 0) * Time.deltaTime);
 
-            if (MoveSpeed > 0) sr.flipX = true;
-            if (MoveSpeed < 0) sr.flipX = false;
+        if (MoveSpeed > 0) sr.flipX = true;
+        if (MoveSpeed < 0) sr.flipX = false;
     }
     void OnCollisionEnter2D(Collision2D other)
     {
@@ -44,13 +46,16 @@ public class EnemyMovement : MonoBehaviour
         {
             other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(other.GetComponent<Rigidbody2D>().linearVelocityX, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
+            other.GetComponent<AudioSource>().PlayOneShot(HitSound, 0.5f);
             GetComponent<Animator>().SetTrigger("hit");
+            Instantiate(StonePart, transform.position, StonePart.transform.localRotation);
+
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            dead = true;        
-            Destroy(gameObject,0.6f);
+            dead = true;
+            Destroy(gameObject, 0.6f);
         }
     }
 }

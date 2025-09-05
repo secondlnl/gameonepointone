@@ -131,6 +131,8 @@ MonoBehaviour:
   KnockbackForce: 400
   Updraft: 180
   DMGGiven: 1
+  HitSound: {fileID: 8300000, guid: 53f26d6289c62d046b8a5f611bb8a4f1, type: 3}
+  StonePart: {fileID: 726843836799312855, guid: 411e5141c8e29744a86f9b59205a7a83, type: 3}
 --- !u!50 &466946302818464179
 Rigidbody2D:
   serializedVersion: 5

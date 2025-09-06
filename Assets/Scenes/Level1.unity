@@ -17522,6 +17522,11 @@ MonoBehaviour:
   - {fileID: 8300000, guid: a7561a38517dcba4ebea0fd88ef8b058, type: 3}
   - {fileID: 8300000, guid: 44329a5f9cfb59546b1aee2eb31e982a, type: 3}
   - {fileID: 8300000, guid: 0bcc70587eb1bf340834040ebe03a32a, type: 3}
+  HitSounds:
+  - {fileID: 8300000, guid: e4bb0fea64f9d574f9357498ee1c0229, type: 3}
+  - {fileID: 8300000, guid: b6db4d97fa8d1714aa7b91c01758cda1, type: 3}
+  - {fileID: 8300000, guid: 82c67a8767e745c4782bb2d874d33e72, type: 3}
+  - {fileID: 8300000, guid: c4d4c79057f500540b0713346caa6b4f, type: 3}
   PickupSound: {fileID: 8300000, guid: aae0eb4a859b5af45aae4d16adbe03bc, type: 3}
   CherryPart: {fileID: 1006035787973729097, guid: 40a2d694449e2e644864a58c81592ddc, type: 3}
   JumpPart: {fileID: 8671419835153158613, guid: 5e471f4593cff6c4ea031be164dd25d6, type: 3}

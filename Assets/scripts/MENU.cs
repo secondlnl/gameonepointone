@@ -5,6 +5,7 @@ public class MENU : MonoBehaviour
 {
     [SerializeField] private GameObject CreditsPanel;
     [SerializeField] private GameObject LevelPanel;
+    [SerializeField] private GameObject QuitPanel;
     [SerializeField] private GameObject LevelOneButton;
     [SerializeField] private GameObject LevelTwoButton;
     [SerializeField] private GameObject LevelThreeButton;
@@ -26,6 +27,8 @@ public class MENU : MonoBehaviour
     }
     public void ShowLevelPanel() { LevelPanel.SetActive(true); }
     public void CloseLevelPanel() { LevelPanel.SetActive(false); }
+    public void ShowQuitPanel() { QuitPanel.SetActive(true); }
+    public void CloseQuitPanel() { QuitPanel.SetActive(false); }
     private bool Locked(int lvllocked)
     {
         bool returnval = false;

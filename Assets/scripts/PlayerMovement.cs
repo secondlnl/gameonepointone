@@ -48,7 +48,7 @@ public class movement : MonoBehaviour
 
     void Update()
     {
-        print("cm: " + canMove);
+        // print("cm: " + canMove);
         anim.SetBool("Grounded", CheckGround());
         //        print(CurrentHealth);
         horizontalValue = Input.GetAxis("Horizontal");
@@ -103,7 +103,7 @@ public class movement : MonoBehaviour
     {
         rb.AddForce(new Vector2(0, JumpForce));
         int RandomValue = Random.Range(0, JumpSounds.Length /*+ 1*/);
-        print(RandomValue);
+        //print(RandomValue);
         audi.PlayOneShot(JumpSounds[RandomValue], 0.5f);
         Instantiate(JumpPart, transform.position, JumpPart.transform.localRotation);
     }

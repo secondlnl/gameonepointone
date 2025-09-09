@@ -42,10 +42,6 @@ public class plant : MonoBehaviour
     {
         toggle = true;
     }
-    void Update()
-    {
-
-    }
     private bool HitScan()
     {
         RaycastHit2D Ray = Physics2D.Raycast(HitRay.position, Vector2.left, rayDistance, Player);

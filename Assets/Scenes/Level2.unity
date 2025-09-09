@@ -6895,7 +6895,7 @@ Transform:
   m_GameObject: {fileID: 566367257}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.28, y: 2.01, z: 0}
+  m_LocalPosition: {x: -67.04, y: 0.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15479,7 +15479,7 @@ Transform:
   m_GameObject: {fileID: 1283637768}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -62.23, y: 1.34, z: 0}
+  m_LocalPosition: {x: -66.08, y: -0.72, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -22051,7 +22051,7 @@ MonoBehaviour:
   Player:
     serializedVersion: 2
     m_Bits: 512
-  rayDistance: 2
+  rayDistance: 7
   HitRay: {fileID: 375293196}
   offset: {x: -0.95, y: 0.05, z: 0}
 --- !u!61 &1693215866

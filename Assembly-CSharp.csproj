@@ -56,11 +56,14 @@
     <Compile Include="Assets\scripts\Lock.cs" />
     <Compile Include="Assets\plant.cs" />
     <Compile Include="Assets\scripts\Trampo.cs" />
+    <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\scripts\camerafollow.cs" />
     <Compile Include="Assets\scripts\PlatformMove.cs" />
     <Compile Include="Assets\scripts\MENU.cs" />
     <Compile Include="Assets\scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\minimenu.cs" />
     <Compile Include="Assets\QuestCheckpoint.cs" />
+    <Compile Include="Assets\castletrigger.cs" />
     <Compile Include="Assets\scripts\health.cs" />
     <Compile Include="Assets\scripts\questmaskman.cs" />
   </ItemGroup>

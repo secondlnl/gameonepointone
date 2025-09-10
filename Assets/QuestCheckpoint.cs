@@ -32,6 +32,7 @@ public class QuestCheckpoint : MonoBehaviour
 
     }
     private void LoadLevel() {
+        PlayerPrefs.SetString("LevelTwo", "0");
         SceneManager.LoadScene(NextLevel);
     }
     void OnTriggerExit2D(Collider2D other)

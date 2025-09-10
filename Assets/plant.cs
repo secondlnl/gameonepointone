@@ -25,11 +25,12 @@ public class plant : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (dead) return;
         anim.SetBool("Angry", HitScan());
     }
     void FixedUpdate()
     {
-
+        if (dead) return;
         while (fire && toggle) // toggle HAS TO STAY to not crash
         {
             toggle = false;

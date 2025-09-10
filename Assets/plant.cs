@@ -23,7 +23,7 @@ public class plant : MonoBehaviour
     void FixedUpdate()
     {
 
-        while (fire && toggle)
+        while (fire && toggle) // toggle HAS TO STAY to not crash
         {
             toggle = false;
             Instantiate(bullet, gameObject.transform.position + offset, Quaternion.identity);

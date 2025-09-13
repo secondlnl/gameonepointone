@@ -9548,7 +9548,7 @@ MonoBehaviour:
   textnotfinished: {fileID: 172418074}
   textfinished: {fileID: 754624314}
   QuestGoal: 20
-  NextLevel: 0
+  NextLevel: 2
 --- !u!61 &724746343
 BoxCollider2D:
   m_ObjectHideFlags: 0

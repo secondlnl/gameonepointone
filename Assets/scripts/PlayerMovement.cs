@@ -151,9 +151,6 @@ public class movement : MonoBehaviour
         fillcolor.color = greenHealth;
         CurrentHealth = StartingHealth;
         UpdateHealthBar();
-
-
-        
         transform.position = SpawnPosition.transform.position;
         rb.linearVelocity = Vector2.zero;
     }

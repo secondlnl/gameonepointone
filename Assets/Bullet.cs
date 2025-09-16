@@ -4,9 +4,9 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     [SerializeField] private GameObject bulletPart;
-     [SerializeField] private float KnockbackForce = 400f;
+    [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 180f;
-        [SerializeField] private int DMGGiven = 1;
+    [SerializeField] private int DMGGiven = 1;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -27,16 +27,16 @@ public class Bullet : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-             other.gameObject.GetComponent<movement>().TakeDMG(DMGGiven);
-             if (other.transform.position.x > transform.position.x)
+            other.gameObject.GetComponent<PlayerDamage>().TakeDMG(DMGGiven);
+            if (other.transform.position.x > transform.position.x)
             {
-                other.gameObject.GetComponent<movement>().TakeKnockback(KnockbackForce, Updraft);
+                other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(KnockbackForce, Updraft);
             }
-            else { other.gameObject.GetComponent<movement>().TakeKnockback(-KnockbackForce, Updraft); }
+            else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
         }
         Instantiate(bulletPart, transform.position, quaternion.identity);
         Destroy(gameObject);
-            
-        
+
+
     }
 }

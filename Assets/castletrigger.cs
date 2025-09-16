@@ -20,7 +20,7 @@ public class castletrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            other.gameObject.GetComponent<movement>().enabled = false;
+            other.gameObject.GetComponent<PlayerMovement>().enabled = false;
             other.gameObject.GetComponent<Animator>().Play("PinkRun", -1);
             other.gameObject.GetComponent<Animator>().SetFloat("MoveSpeed", 0.2f);
             Invoke("LoadLevel", 3.21f);

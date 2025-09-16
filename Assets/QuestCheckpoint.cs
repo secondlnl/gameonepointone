@@ -15,7 +15,7 @@ public class QuestCheckpoint : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player")) if (other.GetComponent<movement>().CherryCount >= QuestGoal)
+        if (other.CompareTag("Player")) if (other.GetComponent<PlayerPickups>().CherryCount >= QuestGoal)
             {
                 dialoguebox.SetActive(true);
                 textfinished.SetActive(true);

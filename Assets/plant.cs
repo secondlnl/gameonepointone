@@ -57,13 +57,13 @@ public class plant : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            other.gameObject.GetComponent<movement>().TakeDMG(DMGGiven);
+            other.gameObject.GetComponent<PlayerDamage>().TakeDMG(DMGGiven);
 
             if (other.transform.position.x > transform.position.x)
             {
-                other.gameObject.GetComponent<movement>().TakeKnockback(KnockbackForce, Updraft);
+                other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(KnockbackForce, Updraft);
             }
-            else { other.gameObject.GetComponent<movement>().TakeKnockback(-KnockbackForce, Updraft); }
+            else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
         }
     }
     void OnTriggerEnter2D(Collider2D other)

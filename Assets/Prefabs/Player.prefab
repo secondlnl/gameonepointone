@@ -44,6 +44,7 @@ GameObject:
   - component: {fileID: 1553839964317669054}
   - component: {fileID: 2740562293217010973}
   - component: {fileID: 2542575881572940218}
+  - component: {fileID: 7508310510841568727}
   - component: {fileID: 7979104561788688085}
   - component: {fileID: 929230459761168033}
   m_Layer: 9
@@ -221,15 +222,27 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b6db4d97fa8d1714aa7b91c01758cda1, type: 3}
   - {fileID: 8300000, guid: 82c67a8767e745c4782bb2d874d33e72, type: 3}
   - {fileID: 8300000, guid: c4d4c79057f500540b0713346caa6b4f, type: 3}
-  PickupSound: {fileID: 8300000, guid: aae0eb4a859b5af45aae4d16adbe03bc, type: 3}
-  CherryPart: {fileID: 1006035787973729097, guid: 40a2d694449e2e644864a58c81592ddc, type: 3}
   JumpPart: {fileID: 8671419835153158613, guid: 5e471f4593cff6c4ea031be164dd25d6, type: 3}
   healthSlider: {fileID: 0}
   fillcolor: {fileID: 0}
   greenHealth: {r: 0.37708077, g: 0.79622644, b: 0.38315135, a: 1}
   RedHealth: {r: 0.7207546, g: 0.16726941, b: 0.24404441, a: 1}
-  cherryText: {fileID: 0}
   StartingHealth: 5
+--- !u!114 &7508310510841568727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286587286620462297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b187e3807d06cae42a6f5bf01d913efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cherryText: {fileID: 0}
+  PickupSound: {fileID: 8300000, guid: aae0eb4a859b5af45aae4d16adbe03bc, type: 3}
+  CherryPart: {fileID: 1006035787973729097, guid: 40a2d694449e2e644864a58c81592ddc, type: 3}
   CherryCount: 0
 --- !u!95 &7979104561788688085
 Animator:

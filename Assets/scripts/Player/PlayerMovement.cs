@@ -7,11 +7,9 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
     [SerializeField] private AudioClip[] JumpSounds;
-    [SerializeField] private AudioClip[] HitSounds;
     [SerializeField] private GameObject JumpPart;
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
-    private bool canMove;
     // private bool DoubleJumping;
     // private bool Jumped;
     // private bool DoubleJumped;
@@ -19,14 +17,15 @@ public class movement : MonoBehaviour
     private SpriteRenderer srr;
     private Animator anim;
     private AudioSource audi;
+    private PlayerDamage playerDamage;
 
     void Start()
     {
-        canMove = true;
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         audi = GetComponent<AudioSource>();
+        playerDamage = GetComponent<PlayerDamage>();
     }
 
     void Update()
@@ -55,7 +54,7 @@ public class movement : MonoBehaviour
     }
     void FixedUpdate()
     {
-        if (canMove == false) return;
+        if (playerDamage.canMove == false) return;
         rb.linearVelocity = new Vector2((horizontalValue * Movementspeed * Time.deltaTime), rb.linearVelocityY);
 
     }
@@ -88,29 +87,6 @@ public class movement : MonoBehaviour
     //     DoubleJumped = false;
     //     Jumped = false;
     // }
-    public void TakeDMG(int DMGamount)
-    {
-        CurrentHealth -= DMGamount;
-        UpdateHealthBar();
-
-        if (CurrentHealth <= 0) Respawn();
-
-    }
-    public void TakeKnockback(float knockbackForce, float updraft)
-    {
-        anim.SetTrigger("hit");
-        int RandomHit = Random.Range(0, HitSounds.Length /*+ 1*/);
-        audi.pitch = Random.Range(0.8f, 1.2f);
-        audi.PlayOneShot(HitSounds[RandomHit], 0.5f);
-        canMove = false;
-        rb.AddForce(new Vector2(knockbackForce, updraft));
-        Invoke("CanMoveAgain", 0.25f);
-    }
-    private void CanMoveAgain()
-    {
-        anim.SetTrigger("hitdone");
-        canMove = true;
-    }
     private bool CheckGround()
     {
         RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, Grounded);

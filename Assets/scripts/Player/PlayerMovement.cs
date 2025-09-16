@@ -1,6 +1,4 @@
-using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class movement : MonoBehaviour
 {
@@ -8,23 +6,15 @@ public class movement : MonoBehaviour
     [SerializeField] private float JumpForce = 300f;
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
-    [SerializeField] private Transform SpawnPosition;
     [SerializeField] private AudioClip[] JumpSounds;
     [SerializeField] private AudioClip[] HitSounds;
     [SerializeField] private GameObject JumpPart;
-    [SerializeField] private Slider healthSlider;
-    [SerializeField] private Image fillcolor;
-    [SerializeField] private Color greenHealth, RedHealth;
-
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
     private bool canMove;
     // private bool DoubleJumping;
     // private bool Jumped;
     // private bool DoubleJumped;
-
-    [SerializeField] private int StartingHealth = 5;
-    private int CurrentHealth = 0;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
@@ -33,7 +23,6 @@ public class movement : MonoBehaviour
     void Start()
     {
         canMove = true;
-        CurrentHealth = StartingHealth;
         srr = GetComponent<SpriteRenderer>();
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
@@ -70,14 +59,7 @@ public class movement : MonoBehaviour
         rb.linearVelocity = new Vector2((horizontalValue * Movementspeed * Time.deltaTime), rb.linearVelocityY);
 
     }
-    void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag("Health"))
-        {
-            HealUp(other.gameObject);
 
-        }
-    }
     private void FlipSprite(bool Direction)
     {
         srr.flipX = Direction;
@@ -128,37 +110,6 @@ public class movement : MonoBehaviour
     {
         anim.SetTrigger("hitdone");
         canMove = true;
-    }
-    private void Respawn()
-    {
-        fillcolor.color = greenHealth;
-        CurrentHealth = StartingHealth;
-        UpdateHealthBar();
-        transform.position = SpawnPosition.transform.position;
-        rb.linearVelocity = Vector2.zero;
-    }
-    private void HealUp(GameObject healthPickUp)
-    {
-        /* 
-        TUT 9 Fix
-        Heal can't be picked up if it would heal too much  
-        */
-        int healthToRestore = healthPickUp.GetComponent<health>().HealPoints;
-        if (CurrentHealth >= StartingHealth || (CurrentHealth + healthToRestore) > StartingHealth) return;
-        else
-        {
-            CurrentHealth += healthToRestore;
-            UpdateHealthBar();
-            Destroy(healthPickUp);
-            if (CurrentHealth >= StartingHealth) CurrentHealth = StartingHealth;
-        }
-    }
-    private void UpdateHealthBar()
-    {
-        healthSlider.value = CurrentHealth;
-
-        if (CurrentHealth >= 2) fillcolor.color = greenHealth; else fillcolor.color = RedHealth;
-
     }
     private bool CheckGround()
     {

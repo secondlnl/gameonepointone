@@ -43,10 +43,12 @@ GameObject:
   - component: {fileID: 3617056701260116588}
   - component: {fileID: 1553839964317669054}
   - component: {fileID: 2740562293217010973}
-  - component: {fileID: 2542575881572940218}
-  - component: {fileID: 7508310510841568727}
   - component: {fileID: 7979104561788688085}
   - component: {fileID: 929230459761168033}
+  - component: {fileID: 2542575881572940218}
+  - component: {fileID: 7508310510841568727}
+  - component: {fileID: 390603915343300199}
+  - component: {fileID: 8665827641538582647}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -190,60 +192,6 @@ Rigidbody2D:
   m_SleepingMode: 0
   m_CollisionDetection: 1
   m_Constraints: 4
---- !u!114 &2542575881572940218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286587286620462297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 934f50d03fcd4944298ff96f951afad7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Movementspeed: 300
-  JumpForce: 400
-  LeftFoot: {fileID: 1187697961384535336}
-  RightFoot: {fileID: 3675458715097532375}
-  Grounded:
-    serializedVersion: 2
-    m_Bits: 1088
-  SpawnPosition: {fileID: 0}
-  JumpSounds:
-  - {fileID: 8300000, guid: c162d94c93d16114e91f1a3864349db0, type: 3}
-  - {fileID: 8300000, guid: bddafe7c4b091964eacb9acdcf271620, type: 3}
-  - {fileID: 8300000, guid: 7deca884ba7778643bb6f2a9342aaaef, type: 3}
-  - {fileID: 8300000, guid: a7561a38517dcba4ebea0fd88ef8b058, type: 3}
-  - {fileID: 8300000, guid: 44329a5f9cfb59546b1aee2eb31e982a, type: 3}
-  - {fileID: 8300000, guid: 0bcc70587eb1bf340834040ebe03a32a, type: 3}
-  HitSounds:
-  - {fileID: 8300000, guid: e4bb0fea64f9d574f9357498ee1c0229, type: 3}
-  - {fileID: 8300000, guid: b6db4d97fa8d1714aa7b91c01758cda1, type: 3}
-  - {fileID: 8300000, guid: 82c67a8767e745c4782bb2d874d33e72, type: 3}
-  - {fileID: 8300000, guid: c4d4c79057f500540b0713346caa6b4f, type: 3}
-  JumpPart: {fileID: 8671419835153158613, guid: 5e471f4593cff6c4ea031be164dd25d6, type: 3}
-  healthSlider: {fileID: 0}
-  fillcolor: {fileID: 0}
-  greenHealth: {r: 0.37708077, g: 0.79622644, b: 0.38315135, a: 1}
-  RedHealth: {r: 0.7207546, g: 0.16726941, b: 0.24404441, a: 1}
-  StartingHealth: 5
---- !u!114 &7508310510841568727
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1286587286620462297}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b187e3807d06cae42a6f5bf01d913efe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cherryText: {fileID: 0}
-  PickupSound: {fileID: 8300000, guid: aae0eb4a859b5af45aae4d16adbe03bc, type: 3}
-  CherryPart: {fileID: 1006035787973729097, guid: 40a2d694449e2e644864a58c81592ddc, type: 3}
-  CherryCount: 0
 --- !u!95 &7979104561788688085
 Animator:
   serializedVersion: 7
@@ -363,6 +311,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &2542575881572940218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286587286620462297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 934f50d03fcd4944298ff96f951afad7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Movementspeed: 300
+  JumpForce: 400
+  LeftFoot: {fileID: 1187697961384535336}
+  RightFoot: {fileID: 3675458715097532375}
+  Grounded:
+    serializedVersion: 2
+    m_Bits: 1088
+  JumpSounds:
+  - {fileID: 8300000, guid: c162d94c93d16114e91f1a3864349db0, type: 3}
+  - {fileID: 8300000, guid: bddafe7c4b091964eacb9acdcf271620, type: 3}
+  - {fileID: 8300000, guid: 7deca884ba7778643bb6f2a9342aaaef, type: 3}
+  - {fileID: 8300000, guid: a7561a38517dcba4ebea0fd88ef8b058, type: 3}
+  - {fileID: 8300000, guid: 44329a5f9cfb59546b1aee2eb31e982a, type: 3}
+  - {fileID: 8300000, guid: 0bcc70587eb1bf340834040ebe03a32a, type: 3}
+  JumpPart: {fileID: 8671419835153158613, guid: 5e471f4593cff6c4ea031be164dd25d6, type: 3}
+--- !u!114 &7508310510841568727
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286587286620462297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b187e3807d06cae42a6f5bf01d913efe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cherryText: {fileID: 0}
+  PickupSound: {fileID: 8300000, guid: aae0eb4a859b5af45aae4d16adbe03bc, type: 3}
+  CherryPart: {fileID: 1006035787973729097, guid: 40a2d694449e2e644864a58c81592ddc, type: 3}
+  CherryCount: 0
+--- !u!114 &390603915343300199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286587286620462297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e55a40675ff2ad489828595e8715d41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  HitSounds:
+  - {fileID: 8300000, guid: e4bb0fea64f9d574f9357498ee1c0229, type: 3}
+  - {fileID: 8300000, guid: b6db4d97fa8d1714aa7b91c01758cda1, type: 3}
+  - {fileID: 8300000, guid: 82c67a8767e745c4782bb2d874d33e72, type: 3}
+  - {fileID: 8300000, guid: c4d4c79057f500540b0713346caa6b4f, type: 3}
+  canMove: 0
+--- !u!114 &8665827641538582647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1286587286620462297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55ac186e62723f043b46110fcd05d3dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StartingHealth: 5
+  CurrentHealth: 0
+  healthSlider: {fileID: 0}
+  fillcolor: {fileID: 0}
+  greenHealth: {r: 0, g: 1, b: 0.030690193, a: 1}
+  RedHealth: {r: 1, g: 0.13147238, b: 0, a: 1}
+  SpawnPosition: {fileID: 0}
 --- !u!1 &4128982322205234633
 GameObject:
   m_ObjectHideFlags: 0

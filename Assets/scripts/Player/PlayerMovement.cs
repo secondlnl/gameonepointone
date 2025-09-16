@@ -11,14 +11,10 @@ public class movement : MonoBehaviour
     [SerializeField] private Transform SpawnPosition;
     [SerializeField] private AudioClip[] JumpSounds;
     [SerializeField] private AudioClip[] HitSounds;
-
-    [SerializeField] private AudioClip PickupSound;
-    [SerializeField] private GameObject CherryPart, JumpPart;
-
+    [SerializeField] private GameObject JumpPart;
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
     [SerializeField] private Color greenHealth, RedHealth;
-    [SerializeField] private TMP_Text cherryText;
 
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
@@ -29,7 +25,6 @@ public class movement : MonoBehaviour
 
     [SerializeField] private int StartingHealth = 5;
     private int CurrentHealth = 0;
-    public int CherryCount = 0;
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
@@ -37,7 +32,6 @@ public class movement : MonoBehaviour
 
     void Start()
     {
-        cherryText.text = CherryCount.ToString(); // CHANGED
         canMove = true;
         CurrentHealth = StartingHealth;
         srr = GetComponent<SpriteRenderer>();
@@ -78,17 +72,6 @@ public class movement : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Cherry"))
-        {
-
-            Destroy(other.gameObject);
-            CherryCount++;
-            cherryText.text = CherryCount.ToString(); //
-            audi.pitch = Random.Range(0.8f, 1.2f);
-            audi.PlayOneShot(PickupSound, 0.5f);
-            Instantiate(CherryPart, other.transform.position, Quaternion.identity);
-
-        }
         if (other.CompareTag("Health"))
         {
             HealUp(other.gameObject);

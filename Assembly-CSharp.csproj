@@ -71,6 +71,7 @@
     <Compile Include="Assets\scripts\Trampo.cs" />
     <Compile Include="Assets\pause.cs" />
     <Compile Include="Assets\scripts\camerafollow.cs" />
+    <Compile Include="Assets\scripts\RhinoBasic.cs" />
     <Compile Include="Assets\scripts\PlatformMove.cs" />
     <Compile Include="Assets\scripts\MENU.cs" />
     <Compile Include="Assets\scripts\EnemyMovement.cs" />

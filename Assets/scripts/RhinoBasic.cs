@@ -23,14 +23,6 @@ public class RhinoBasic : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-    private void FixedUpdate()
-    {
-        if (canSeePlayer)
-        {
-            transform.Translate(new Vector2(MoveSpeed, 0) * Time.deltaTime);
-        }
-    }
-
     void Update()
     {
         CanSeePlayer();

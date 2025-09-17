@@ -30,6 +30,23 @@ public class RhinoBasic : MonoBehaviour
         CanSeePlayer();
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(other.GetComponent<Rigidbody2D>().linearVelocityX, 0);
+            other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
+            other.GetComponent<AudioSource>().PlayOneShot(HitSound, 0.5f);
+
+            GetComponent<BoxCollider2D>().enabled = false;
+            GetComponent<CircleCollider2D>().enabled = false;
+            GetComponent<Rigidbody2D>().gravityScale = 0;
+            GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            dead = true;
+            Destroy(gameObject, 0.6f);
+        }
+    }
+
     private bool CanSeePlayer()
     {
         RaycastHit2D playerSeen = Physics2D.Raycast(eyes.position, Vector2.left, rayDistance, whatIsPlayer);

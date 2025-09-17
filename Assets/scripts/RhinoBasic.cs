@@ -30,6 +30,24 @@ public class RhinoBasic : MonoBehaviour
         CanSeePlayer();
     }
 
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("EnemyBlock")) MoveSpeed = -MoveSpeed;
+        if (other.gameObject.CompareTag("Enemy")) MoveSpeed = -MoveSpeed;
+        if (other.gameObject.CompareTag("Player"))
+        {
+            other.gameObject.GetComponent<PlayerDamage>().TakeDMG(DMGGiven);
+
+            if (other.transform.position.x > transform.position.x)
+            {
+                other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(KnockbackForce, Updraft);
+            }
+            else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
+        }
+
+
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))

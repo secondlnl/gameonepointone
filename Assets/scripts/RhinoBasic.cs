@@ -63,17 +63,13 @@ public class RhinoBasic : MonoBehaviour
         }
     }
 
-    private bool CanSeePlayer()
+    private void CanSeePlayer()
     {
         RaycastHit2D playerSeen = Physics2D.Raycast(eyes.position, Vector2.left, rayDistance, whatIsPlayer);
 
         if(playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
         {
-            return true;
-        }
-        else
-        {
-            return false;
+            Debug.Log("Player Detected");
         }
     }
 }

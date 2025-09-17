@@ -42826,6 +42826,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7508310510841568727, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
+      propertyPath: cherryText
+      value: 
+      objectReference: {fileID: 149606229}
+    - target: {fileID: 8665827641538582647, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
+      propertyPath: fillcolor
+      value: 
+      objectReference: {fileID: 1029501371}
+    - target: {fileID: 8665827641538582647, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
+      propertyPath: healthSlider
+      value: 
+      objectReference: {fileID: 1443312561}
+    - target: {fileID: 8665827641538582647, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
+      propertyPath: SpawnPosition
+      value: 
+      objectReference: {fileID: 566367258}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

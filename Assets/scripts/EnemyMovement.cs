@@ -2,28 +2,27 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 2.0f;
-    [SerializeField] private float bounciness = 300f;
+    [SerializeField] protected float MoveSpeed = 2.0f;
+    [SerializeField] protected float bounciness = 300f;
     [SerializeField] private float KnockbackForce = 400f;
-    [SerializeField] private float Updraft = 180f;
+    [SerializeField] private float Updraft = 200f;
     [SerializeField] private int DMGGiven = 1;
-    [SerializeField] private AudioClip HitSound;
+    [SerializeField] protected AudioClip HitSound;
     [SerializeField] private GameObject StonePart;
-    private SpriteRenderer sr;
-    private bool dead = false;
-    void Start()
+    protected SpriteRenderer sr;
+    protected bool dead = false;
+    protected virtual void Start()
     {
         sr = GetComponent<SpriteRenderer>();
     }
-    void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         if (dead) return;
         transform.Translate(new Vector2(MoveSpeed, 0) * Time.deltaTime);
-
         if (MoveSpeed > 0) sr.flipX = true;
         if (MoveSpeed < 0) sr.flipX = false;
     }
-    void OnCollisionEnter2D(Collision2D other)
+    protected virtual void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("EnemyBlock")) MoveSpeed = -MoveSpeed;
         if (other.gameObject.CompareTag("Enemy")) MoveSpeed = -MoveSpeed;
@@ -40,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
 
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {

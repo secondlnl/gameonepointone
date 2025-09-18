@@ -54,6 +54,12 @@ public class PlayerMovement : MonoBehaviour
             coyoteTimeCounter = 0f;
         }
 
+        if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0)
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.5f);
+        }
+        
+
         anim.SetFloat("MoveSpeed", Mathf.Abs(rb.linearVelocityX));
         anim.SetFloat("VerticalSpeed", rb.linearVelocityY);
         // anim.SetBool("doublejumping", DoubleJumping);

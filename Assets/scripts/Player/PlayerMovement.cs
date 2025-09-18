@@ -18,7 +18,9 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
     private AudioSource audi;
     private PlayerDamage playerDamage;
-
+    private float coyoteTime = 0.1f;
+    private float coyoteTimeCounter;
+    
     void Start()
     {
         srr = GetComponent<SpriteRenderer>();
@@ -37,14 +39,19 @@ public class PlayerMovement : MonoBehaviour
         if (horizontalValue < 0) FlipSprite(true);
         if (horizontalValue > 0) FlipSprite(false);
 
-        if (Input.GetButtonDown("Jump"))
+        if (CheckGround())
         {
-            if (CheckGround() == true /*&& Jumped == false*/)
-            {
-                Jump();
-                // Jumped = true;
-            }
-            // else if (Jumped == true && CheckGround() == false && DoubleJumped == false) DoubleJump();
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+        
+        if (coyoteTimeCounter > 0f && Input.GetButtonDown("Jump"))
+        {
+            Jump();
+            coyoteTimeCounter = 0f;
         }
 
         anim.SetFloat("MoveSpeed", Mathf.Abs(rb.linearVelocityX));

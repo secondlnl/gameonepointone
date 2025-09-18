@@ -10,16 +10,23 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private GameObject JumpPart;
     private float horizontalValue = 0f;
     private float rayDistance = 0.25f;
+    private float coyoteTime = 0.1f;
+    private float coyoteTimeCounter;
+    private float jumpBufferTime = 0.2f;
+    private float jumpBufferCounter;
+    
     // private bool DoubleJumping;
     // private bool Jumped;
     // private bool DoubleJumped;
+    
     private Rigidbody2D rb;
     private SpriteRenderer srr;
     private Animator anim;
     private AudioSource audi;
     private PlayerDamage playerDamage;
-    private float coyoteTime = 0.1f;
-    private float coyoteTimeCounter;
+    
+    
+
     
     void Start()
     {
@@ -43,18 +50,28 @@ public class PlayerMovement : MonoBehaviour
         {
             coyoteTimeCounter = coyoteTime;
         }
-        else
+        if (!CheckGround() && coyoteTimeCounter > 0)
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
         
-        if (coyoteTimeCounter > 0f && Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump"))
+        {
+            jumpBufferCounter = jumpBufferTime;
+        }
+        if (jumpBufferCounter > 0)
+        {
+            jumpBufferCounter -= Time.deltaTime;
+        }
+        
+        if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
             Jump();
             coyoteTimeCounter = 0f;
+            jumpBufferCounter = 0f;
         }
 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0)
+        if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0) // cut jump height when releasing jump button
         {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.5f);
         }
@@ -84,6 +101,19 @@ public class PlayerMovement : MonoBehaviour
         audi.PlayOneShot(JumpSounds[RandomValue], 0.5f);
         Instantiate(JumpPart, transform.position, JumpPart.transform.localRotation);
     }
+    
+    private bool CheckGround()
+    {
+        RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, Grounded);
+        RaycastHit2D RightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, Grounded);
+
+        if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || RightHit.collider != null && RightHit.collider.CompareTag("Ground"))
+        {
+            return true;
+        }
+        return false;
+
+    }
     // private void DoubleJump()
     // {
     //     DoubleJumping = true;
@@ -100,17 +130,5 @@ public class PlayerMovement : MonoBehaviour
     //     DoubleJumped = false;
     //     Jumped = false;
     // }
-    private bool CheckGround()
-    {
-        RaycastHit2D leftHit = Physics2D.Raycast(LeftFoot.position, Vector2.down, rayDistance, Grounded);
-        RaycastHit2D RightHit = Physics2D.Raycast(RightFoot.position, Vector2.down, rayDistance, Grounded);
-
-        if (leftHit.collider != null && leftHit.collider.CompareTag("Ground") || RightHit.collider != null && RightHit.collider.CompareTag("Ground"))
-        {
-            return true;
-        }
-        else return false;
-
-    }
 
 }

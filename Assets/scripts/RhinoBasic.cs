@@ -42,8 +42,8 @@ public class RhinoBasic : MonoBehaviour
         {
             currentTarget = target1;
         }
-        if (chargeSpeed > 0) sr.flipX = true;
-        if (chargeSpeed < 0) sr.flipX = false;
+        if (chargeSpeed > 0) sr.flipX = false;
+        if (chargeSpeed < 0) sr.flipX = true;
 
         if (canSeePlayer == true)
         {
@@ -98,6 +98,7 @@ public class RhinoBasic : MonoBehaviour
         else
         {
             canSeePlayer = false;
+            GetComponent<Animator>().SetBool("CanSeePlayer", false);
         }
     }
 }

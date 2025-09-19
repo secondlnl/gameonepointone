@@ -32,6 +32,8 @@ public class RhinoBasic : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (dead) return;
+        
         if (transform.position == target1.position)
         {
             currentTarget = target2;
@@ -40,6 +42,8 @@ public class RhinoBasic : MonoBehaviour
         {
             currentTarget = target1;
         }
+        if (chargeSpeed > 0) sr.flipX = true;
+        if (chargeSpeed < 0) sr.flipX = false;
     }
 
     void OnCollisionEnter2D(Collision2D other)

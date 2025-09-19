@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - Cherry
   - Health
+  - Target
   layers:
   - Default
   - TransparentFX

@@ -2918,7 +2918,7 @@ PrefabInstance:
       objectReference: {fileID: 270618120}
     - target: {fileID: 4992632936115016901, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: chargeSpeed
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5323528724633041851, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: m_FlipX
@@ -2927,6 +2927,10 @@ PrefabInstance:
     - target: {fileID: 6048000754262352510, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: m_Name
       value: RhinoBasic
+      objectReference: {fileID: 0}
+    - target: {fileID: 7611989015824936291, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
+      propertyPath: m_Constraints
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7611989015824936291, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: m_Interpolate

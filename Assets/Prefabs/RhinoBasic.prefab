@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d92743b38a60084fbd8e1cd1f459abf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  chargeSpeed: 5
+  chargeSpeed: 6
   bounciness: 300
   KnockbackForce: 400
   Updraft: 180
@@ -211,7 +211,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!58 &6830564022311978136
 CircleCollider2D:
   m_ObjectHideFlags: 0

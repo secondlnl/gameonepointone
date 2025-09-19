@@ -11,11 +11,11 @@ public class RhinoBasic : MonoBehaviour
     [SerializeField] private Transform eyes;
     [SerializeField] private AudioClip HitSound;
     [SerializeField] private Transform target1, target2;
+    [SerializeField] private float rayRadius = 10f;
     
     private SpriteRenderer sr;
     private bool dead = false;
     private bool canSeePlayer;
-    private float rayDistance = 25f;
     private Transform currentTarget;
 
 
@@ -87,7 +87,7 @@ public class RhinoBasic : MonoBehaviour
 
     private void CanSeePlayer()
     {
-        RaycastHit2D playerSeen = Physics2D.Raycast(eyes.position, Vector2.left, rayDistance, whatIsPlayer);
+        RaycastHit2D playerSeen = Physics2D.CircleCast(eyes.position, rayRadius, Vector2.one, rayRadius, whatIsPlayer);
 
         if(playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
         {

@@ -53,7 +53,11 @@ public class RhinoBasic : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBlock")) chargeSpeed = -chargeSpeed;
+        if (other.gameObject.CompareTag("EnemyBlock"))
+        { 
+            Invoke("WallStun", 3.0f);
+            dead = true;
+        }
         if (other.gameObject.CompareTag("Enemy")) chargeSpeed = -chargeSpeed;
         if (other.gameObject.CompareTag("Player"))
         {
@@ -98,6 +102,14 @@ public class RhinoBasic : MonoBehaviour
         {
             canSeePlayer = false;
             GetComponent<Animator>().SetBool("CanSeePlayer", false);
+        }
+    }
+
+    void WallStun()
+    {
+        {
+            dead = false;
+            chargeSpeed = -chargeSpeed;
         }
     }
 }

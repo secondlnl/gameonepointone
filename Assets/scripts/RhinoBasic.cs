@@ -91,7 +91,6 @@ public class RhinoBasic : MonoBehaviour
 
         if(playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
         {
-            Debug.Log("Player Detected");
             canSeePlayer = true;
             GetComponent<Animator>().SetBool("CanSeePlayer", true);
         }

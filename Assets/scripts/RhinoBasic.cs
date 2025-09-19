@@ -44,6 +44,11 @@ public class RhinoBasic : MonoBehaviour
         }
         if (chargeSpeed > 0) sr.flipX = true;
         if (chargeSpeed < 0) sr.flipX = false;
+
+        if (canSeePlayer == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, currentTarget.position, chargeSpeed * Time.deltaTime);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)

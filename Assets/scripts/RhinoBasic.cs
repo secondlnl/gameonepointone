@@ -80,6 +80,7 @@ public class RhinoBasic : MonoBehaviour
             other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(other.GetComponent<Rigidbody2D>().linearVelocityX, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
             other.GetComponent<AudioSource>().PlayOneShot(HitSound, 0.5f);
+            GetComponent<Animator>().SetTrigger("Hit");
 
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;

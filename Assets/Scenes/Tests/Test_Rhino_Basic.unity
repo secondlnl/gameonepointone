@@ -2499,6 +2499,10 @@ PrefabInstance:
       propertyPath: target2
       value: 
       objectReference: {fileID: 1157146446}
+    - target: {fileID: 4992632936115016901, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
+      propertyPath: chargeSpeed
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 6048000754262352510, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: m_Name
       value: RhinoBasic

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RhinoBasic : MonoBehaviour
 {
-    [SerializeField] private float chargeSpeed = 5.0f;
+    [SerializeField] private float chargeSpeed = 10.0f;
     [SerializeField] private float bounciness = 300f;
     [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 180f;
@@ -54,7 +54,8 @@ public class RhinoBasic : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("EnemyBlock"))
-        { 
+        {
+            GetComponent<Animator>().SetTrigger("WallStun");
             Invoke("WallStun", 3.0f);
             dead = true;
         }

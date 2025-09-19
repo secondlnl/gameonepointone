@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RhinoBasic : MonoBehaviour
 {
-    [SerializeField] private float MoveSpeed = 2.0f;
+    [SerializeField] private float chargeSpeed = 5.0f;
     [SerializeField] private float bounciness = 300f;
     [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 180f;
@@ -10,16 +10,18 @@ public class RhinoBasic : MonoBehaviour
     [SerializeField] private LayerMask whatIsPlayer;
     [SerializeField] private Transform eyes;
     [SerializeField] private AudioClip HitSound;
+    [SerializeField] private Transform target1, target2;
+    
     private SpriteRenderer sr;
     private bool dead = false;
     private bool canSeePlayer;
     private float rayDistance = 25f;
-
-
+    private Transform currentTarget;
 
 
     void Start()
     {
+        currentTarget = target1;
         sr = GetComponent<SpriteRenderer>();
     }
 
@@ -28,10 +30,22 @@ public class RhinoBasic : MonoBehaviour
         CanSeePlayer();
     }
 
+    private void FixedUpdate()
+    {
+        if (transform.position == target1.position)
+        {
+            currentTarget = target2;
+        }
+        if (transform.position == target2.position)
+        {
+            currentTarget = target1;
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBlock")) MoveSpeed = -MoveSpeed;
-        if (other.gameObject.CompareTag("Enemy")) MoveSpeed = -MoveSpeed;
+        if (other.gameObject.CompareTag("EnemyBlock")) chargeSpeed = -chargeSpeed;
+        if (other.gameObject.CompareTag("Enemy")) chargeSpeed = -chargeSpeed;
         if (other.gameObject.CompareTag("Player"))
         {
             other.gameObject.GetComponent<PlayerDamage>().TakeDMG(DMGGiven);
@@ -42,7 +56,6 @@ public class RhinoBasic : MonoBehaviour
             }
             else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
         }
-
 
     }
 

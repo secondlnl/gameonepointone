@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class RhinoBasic : MonoBehaviour
 {
-    [SerializeField] private float chargeSpeed = 5.0f;
+    [SerializeField] private float chargeSpeed = 10.0f;
     [SerializeField] private float bounciness = 300f;
     [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 180f;
@@ -53,7 +53,12 @@ public class RhinoBasic : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("EnemyBlock")) chargeSpeed = -chargeSpeed;
+        if (other.gameObject.CompareTag("EnemyBlock"))
+        {
+            GetComponent<Animator>().SetTrigger("WallStun");
+            Invoke("WallStun", 3.0f);
+            dead = true;
+        }
         if (other.gameObject.CompareTag("Enemy")) chargeSpeed = -chargeSpeed;
         if (other.gameObject.CompareTag("Player"))
         {
@@ -75,6 +80,7 @@ public class RhinoBasic : MonoBehaviour
             other.GetComponent<Rigidbody2D>().linearVelocity = new Vector2(other.GetComponent<Rigidbody2D>().linearVelocityX, 0);
             other.GetComponent<Rigidbody2D>().AddForce(new Vector2(0, bounciness));
             other.GetComponent<AudioSource>().PlayOneShot(HitSound, 0.5f);
+            GetComponent<Animator>().SetTrigger("Hit");
 
             GetComponent<BoxCollider2D>().enabled = false;
             GetComponent<CircleCollider2D>().enabled = false;
@@ -98,6 +104,14 @@ public class RhinoBasic : MonoBehaviour
         {
             canSeePlayer = false;
             GetComponent<Animator>().SetBool("CanSeePlayer", false);
+        }
+    }
+
+    void WallStun()
+    {
+        {
+            dead = false;
+            chargeSpeed = -chargeSpeed;
         }
     }
 }

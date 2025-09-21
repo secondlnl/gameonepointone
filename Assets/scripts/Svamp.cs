@@ -7,6 +7,7 @@ public class Svamp : MonoBehaviour
     [SerializeField] private Transform SvampEyes;
     [SerializeField] private LayerMask whatIsPlayer;
     [SerializeField] private Transform target;
+    [SerializeField] private GameObject svampCloud;
 
     private SpriteRenderer sr;
     private bool dead = false;
@@ -65,7 +66,7 @@ public class Svamp : MonoBehaviour
 
     private void Cloud()
     {
-        //Explosion particle effect triggered
-        //Instantiate Cloud
+        //Explosion particle effect trigger
+        Instantiate(svampCloud, SvampEyes.transform.position, Quaternion.identity);
     }
 }

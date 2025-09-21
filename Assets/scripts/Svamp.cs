@@ -6,6 +6,7 @@ public class Svamp : MonoBehaviour
     [SerializeField] private float rayRadius = 4.0f;
     [SerializeField] private Transform SvampEyes;
     [SerializeField] private LayerMask whatIsPlayer;
+    [SerializeField] private Transform target;
 
     private SpriteRenderer sr;
     private bool dead = false;
@@ -19,7 +20,6 @@ public class Svamp : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
-
     void Update()
     {
         CanSeePlayer();
@@ -27,7 +27,23 @@ public class Svamp : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (dead) return;
 
+        if (canSeePlayer == true)
+        {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, MoveSpeed * Time.deltaTime);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            dead = true;
+            GetComponent<Animator>().SetTrigger("Grow");
+            Invoke("Cloud", 1.0f);
+            Destroy(gameObject, 1.0f);
+        }
     }
 
     private void CanSeePlayer()
@@ -45,5 +61,11 @@ public class Svamp : MonoBehaviour
             canSeePlayer = false;
             GetComponent<Animator>().SetBool("CanSeePlayer", false);
         }
+    }
+
+    private void Cloud()
+    {
+        //Explosion particle effect triggered
+        //Instantiate Cloud
     }
 }

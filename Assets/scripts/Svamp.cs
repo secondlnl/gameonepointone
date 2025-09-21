@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class Svamp : MonoBehaviour
 {
-    [SerializeField] private float idleSpeed = 1.0f;
-    [SerializeField] private float runSpeed = 3.0f;
+    [SerializeField] private float MoveSpeed = 3.0f;
+    [SerializeField] private float rayRadius = 4.0f;
+    [SerializeField] private Transform SvampEyes;
+    [SerializeField] private LayerMask whatIsPlayer;
 
     private SpriteRenderer sr;
     private bool dead = false;
+    private bool canSeePlayer;
+
 
 
 
@@ -18,14 +22,28 @@ public class Svamp : MonoBehaviour
 
     void Update()
     {
-        
+        CanSeePlayer();
     }
 
     private void FixedUpdate()
     {
-        if (dead) return;
-        transform.Translate(new Vector2(idleSpeed, 0) * Time.deltaTime);
-        if (idleSpeed > 0) sr.flipX = true;
-        if (idleSpeed < 0) sr.flipX = false;
+
+    }
+
+    private void CanSeePlayer()
+    {
+        RaycastHit2D playerSeen = Physics2D.CircleCast(SvampEyes.position, rayRadius, Vector2.one, rayRadius, whatIsPlayer);
+
+        if (playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
+        {
+            Debug.Log("Player Detected!");
+            canSeePlayer = true;
+            GetComponent<Animator>().SetBool("CanSeePlayer", true);
+        }
+        else
+        {
+            canSeePlayer = false;
+            GetComponent<Animator>().SetBool("CanSeePlayer", false);
+        }
     }
 }

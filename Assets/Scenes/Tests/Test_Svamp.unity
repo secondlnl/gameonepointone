@@ -1177,6 +1177,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Svamp
       objectReference: {fileID: 0}
+    - target: {fileID: 2333620141625535574, guid: ce82808358a866b4cba2bbbd36891666, type: 3}
+      propertyPath: m_Size.x
+      value: 1.4536147
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333620141625535574, guid: ce82808358a866b4cba2bbbd36891666, type: 3}
+      propertyPath: m_Size.y
+      value: 1.1897552
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333620141625535574, guid: ce82808358a866b4cba2bbbd36891666, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.016967058
+      objectReference: {fileID: 0}
+    - target: {fileID: 2333620141625535574, guid: ce82808358a866b4cba2bbbd36891666, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.57791054
+      objectReference: {fileID: 0}
     - target: {fileID: 5486290676441800608, guid: ce82808358a866b4cba2bbbd36891666, type: 3}
       propertyPath: target
       value: 

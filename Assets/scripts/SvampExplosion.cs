@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SvampExplosion : MonoBehaviour
 {
-    [SerializeField] private float KnockbackForce = 400f;
-    [SerializeField] private float Updraft = 180f;
+    [SerializeField] private float KnockbackForce = 200f;
+    [SerializeField] private float Updraft = 150f;
     [SerializeField] private int DMGGiven = 1;
     public ParticleSystem part;
     public List<ParticleCollisionEvent> collisionEvents;
@@ -29,5 +29,4 @@ public class SvampExplosion : MonoBehaviour
             else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
         }
     }
-
 }

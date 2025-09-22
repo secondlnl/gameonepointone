@@ -12,7 +12,6 @@ public class DisappearingPlatform : MonoBehaviour
     private ParticleSystemRenderer part;
     [SerializeField] float MoveSpeed = 2f;
     [SerializeField] private Sprite sprite;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
@@ -25,9 +24,7 @@ public class DisappearingPlatform : MonoBehaviour
     }
     void Update()
     {
-
         if (Active == false && Touched == true)
-        // if (Vector2.Distance(transform.position,Startpos) < 0.1)
         {
             part.enabled = false;
             CurrentTarget = Targetpos;
@@ -35,35 +32,13 @@ public class DisappearingPlatform : MonoBehaviour
             transform.position = Vector2.MoveTowards(transform.position, CurrentTarget, MoveSpeed * Time.deltaTime);
         }
         else
-        // if (Vector2.Distance(transform.position,Targetpos) < 0.1)
         {
             part.enabled = true;
             CurrentTarget = Startpos;
             anim.SetBool("animActive", true);
             transform.position = Vector2.MoveTowards(transform.position, CurrentTarget, MoveSpeed * Time.deltaTime);
         }
-
-        // if (Inactive == true)
-        // {
-        //     while (transform.position != Targetpos)
-        //     { transform.position = Vector2.MoveTowards(transform.position, Targetpos, MoveSpeed * Time.deltaTime); }
-        // }
-        // if (Inactive == false)
-        // {
-        //     while (transform.position != Startpos)
-        //     { transform.position = Vector2.MoveTowards(transform.position, Startpos, MoveSpeed * Time.deltaTime); }
-        // }
     }
-    // void Update()
-    // {
-    //     if (Active == true) return;
-    //     if (anim.enabled == false)
-    //     {
-    //         Active = false;
-    //         sr.sprite = sprite;
-    //     }
-
-    // }
     void OnCollisionEnter2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Player"))

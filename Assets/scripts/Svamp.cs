@@ -7,14 +7,11 @@ public class Svamp : MonoBehaviour
     [SerializeField] private Transform SvampEyes;
     [SerializeField] private LayerMask whatIsPlayer;
     [SerializeField] private Transform target;
-    [SerializeField] private GameObject svampCloud;
+    [SerializeField] private GameObject svampExplosion;
 
     private SpriteRenderer sr;
     private bool dead = false;
     private bool canSeePlayer;
-
-
-
 
     void Start()
     {
@@ -44,7 +41,7 @@ public class Svamp : MonoBehaviour
         {
             dead = true;
             GetComponent<Animator>().SetTrigger("Grow");
-            Invoke("Cloud", 1.0f);
+            Invoke("Explosion", 1.0f);
             Destroy(gameObject, 1.0f);
         }
     }
@@ -65,9 +62,8 @@ public class Svamp : MonoBehaviour
         }
     }
 
-    private void Cloud()
+    private void Explosion()
     {
-        //Explosion particle effect trigger
-        Instantiate(svampCloud, SvampEyes.transform.position, Quaternion.identity);
+        Instantiate(svampExplosion, SvampEyes.transform.position, Quaternion.identity);
     }
 }

@@ -13,6 +13,7 @@ public class SvampExplosion : MonoBehaviour
     {
         part = GetComponent<ParticleSystem>();
         collisionEvents = new List<ParticleCollisionEvent>();
+        Destroy(gameObject, 1.0f);
     }
 
     private void OnParticleCollision(GameObject other)

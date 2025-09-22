@@ -43,9 +43,9 @@ GameObject:
   - component: {fileID: 3252732969777244610}
   - component: {fileID: 4967923725435444214}
   - component: {fileID: 1207703698072339454}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bee
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -166,6 +166,6 @@ MonoBehaviour:
   KnockbackForce: 400
   Updraft: 180
   DMGGiven: 1
-  HitSound: {fileID: 0}
+  HitSound: {fileID: 8300000, guid: 53f26d6289c62d046b8a5f611bb8a4f1, type: 3}
   PlantPart: {fileID: 0}
   offset: {x: 0, y: 0.5, z: 0}

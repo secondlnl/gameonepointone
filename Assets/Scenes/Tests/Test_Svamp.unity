@@ -130,6 +130,7 @@ GameObject:
   - component: {fileID: 278922411}
   - component: {fileID: 278922410}
   - component: {fileID: 278922409}
+  - component: {fileID: 278922412}
   m_Layer: 0
   m_Name: SvampExplosion
   m_TagString: Untagged
@@ -5010,6 +5011,22 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &278922412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278922408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ce195c8f77bbd3409264d7e063187fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KnockbackForce: 400
+  Updraft: 180
+  DMGGiven: 1
+  part: {fileID: 278922410}
 --- !u!1 &778505872
 GameObject:
   m_ObjectHideFlags: 0

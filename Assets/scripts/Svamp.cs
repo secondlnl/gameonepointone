@@ -34,6 +34,8 @@ public class Svamp : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, MoveSpeed * Time.deltaTime);
         }
+
+        this.sr.flipX = target.transform.position.x > this.transform.position.x;
     }
 
     private void OnTriggerEnter2D(Collider2D other)

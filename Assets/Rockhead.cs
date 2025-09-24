@@ -6,7 +6,9 @@ public class Rockhead : MonoBehaviour
     private ParticleSystemRenderer part;
     private AudioSource audi;
     private Animator anim;
+    [SerializeField] private LayerMask playermask;
     private bool Moving = false;
+    private bool toggle = false;
     [SerializeField] private AudioClip HitSound;
     [SerializeField] private float KnockbackForce = 400f;
     [SerializeField] private float Updraft = 200f;
@@ -22,14 +24,19 @@ public class Rockhead : MonoBehaviour
         part.enabled = false;
         anim.enabled = false;
     }
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
         if (other.gameObject.CompareTag("Ground") && Moving == true)
         {
-            Moving = false; part.enabled = true; audi.PlayOneShot(HitSound, 0.5f); anim.enabled = true;
+            Moving = false;
+            part.enabled = true;
+            audi.PlayOneShot(HitSound, 0.5f);
+            anim.enabled = true;
+            GetComponent<DestroyAfterLifetime>().enabled = true;
         }
-        if (other.gameObject.CompareTag("Player") && Moving == true)
+        if (other.gameObject.CompareTag("Player") && Moving == true && toggle == false)
         {
+            toggle = true;
             other.gameObject.GetComponent<PlayerDamage>().TakeDMG(DMGGiven);
 
             if (other.transform.position.x > transform.position.x)
@@ -37,6 +44,9 @@ public class Rockhead : MonoBehaviour
                 other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(KnockbackForce, Updraft);
             }
             else { other.gameObject.GetComponent<PlayerDamage>().TakeKnockback(-KnockbackForce, Updraft); }
+            rb.excludeLayers = playermask;
+
+
         }
 
     }
@@ -44,15 +54,15 @@ public class Rockhead : MonoBehaviour
     {
         if (other.CompareTag("Player") && rb.bodyType == RigidbodyType2D.Static)
         {
-            Moving = true;
             rb.constraints = RigidbodyConstraints2D.FreezeRotation;
             rb.bodyType = RigidbodyType2D.Dynamic;
+            Invoke("IsMoving", 0.4f);
         }
     }
 
     // Update is called once per frame
-    void Update()
+    private void IsMoving()
     {
-
+        Moving = true;
     }
 }

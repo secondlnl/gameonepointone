@@ -8,7 +8,7 @@ public class CheckpointScript : MonoBehaviour
 
     private void Awake()
     {
-        respawn = GameObject.FindGameObjectWithTag("KillZone").GetComponent<RespawnScript>();
+        respawn = GameObject.FindGameObjectWithTag("Respawn").GetComponent<RespawnScript>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)

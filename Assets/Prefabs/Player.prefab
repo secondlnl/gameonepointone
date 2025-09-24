@@ -324,7 +324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Movementspeed: 300
-  JumpForce: 450
+  JumpForce: 400
   LeftFoot: {fileID: 1187697961384535336}
   RightFoot: {fileID: 3675458715097532375}
   Grounded:

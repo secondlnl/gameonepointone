@@ -8,8 +8,9 @@ public class RespawnScript : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
+                   player.transform.position = respawnPoint.transform.position;
+
             player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            player.transform.position = respawnPoint.transform.position;
         }
     }
 }

@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float Movementspeed = 1f;
-    [SerializeField] private float JumpForce = 450f;
+    [SerializeField] private float JumpForce = 300f;
     [SerializeField] private Transform LeftFoot, RightFoot;
     [SerializeField] private LayerMask Grounded;
     [SerializeField] private AudioClip[] JumpSounds;

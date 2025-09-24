@@ -2917,6 +2917,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 270618120}
     - target: {fileID: 4992632936115016901, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
+      propertyPath: HitSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 05dbc1f191a6a3047b74f8e6403cb8d4, type: 3}
+    - target: {fileID: 4992632936115016901, guid: 2ed0212a97f6c8b49949f6c4fe0164c2, type: 3}
       propertyPath: chargeSpeed
       value: 6
       objectReference: {fileID: 0}
@@ -41472,7 +41476,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 656268e301489e84aa6fe1cda5429062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SpawnPosition: {fileID: 566367258}
+  respawnPoint: {fileID: 0}
+  player: {fileID: 0}
 --- !u!1 &2097388480
 GameObject:
   m_ObjectHideFlags: 0

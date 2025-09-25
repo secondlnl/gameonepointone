@@ -1058,6 +1058,10 @@ PrefabInstance:
       value: Saw5
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size
       value: 6
       objectReference: {fileID: 0}
@@ -1785,6 +1789,10 @@ PrefabInstance:
     - target: {fileID: 1153673971416858979, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: m_Name
       value: Saw1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size
@@ -7045,6 +7053,10 @@ PrefabInstance:
       value: Saw4.2
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -7316,6 +7328,10 @@ PrefabInstance:
     - target: {fileID: 1153673971416858979, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: m_Name
       value: Saw3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size
@@ -16696,6 +16712,10 @@ PrefabInstance:
       value: Saw4
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size
       value: 10
       objectReference: {fileID: 0}
@@ -17632,6 +17652,10 @@ PrefabInstance:
     - target: {fileID: 1153673971416858979, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: m_Name
       value: Saw2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
+      propertyPath: speed
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1337658792510946142, guid: e0a8d6c88dba4a041b8d384c9d892f5c, type: 3}
       propertyPath: sawCheckpoints.Array.size

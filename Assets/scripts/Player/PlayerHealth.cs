@@ -9,11 +9,16 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Image fillcolor;
     [SerializeField] private Color greenHealth, RedHealth;
     [SerializeField] private Transform SpawnPosition;
+    private AudioSource audi;
+    [SerializeField] private AudioClip HealthSound;
+
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         CurrentHealth = StartingHealth;
+        audi = GetComponent<AudioSource>();
+
         rb = GetComponent<Rigidbody2D>();
     }
 
@@ -48,6 +53,7 @@ public class PlayerHealth : MonoBehaviour
         if (CurrentHealth >= StartingHealth || (CurrentHealth + healthToRestore) > StartingHealth) return;
         else
         {
+            audi.PlayOneShot(HealthSound, 0.45f);
             CurrentHealth += healthToRestore;
             UpdateHealthBar();
             Destroy(healthPickUp);

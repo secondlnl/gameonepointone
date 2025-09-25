@@ -11,6 +11,8 @@ TagManager:
   - Cherry
   - Health
   - Target
+  - water
+  - Sound
   layers:
   - Default
   - TransparentFX

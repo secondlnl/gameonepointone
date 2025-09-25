@@ -28,7 +28,10 @@ public class Water : MonoBehaviour
         {
             GetComponentInChildren<AreaEffector2D>().enabled = false;
             GetComponentInChildren<TilemapCollider2D>().usedByEffector = false;
+            GetComponentInChildren<TilemapCollider2D>().isTrigger = true;
             GetComponentInChildren<RespawnScript>().enabled = true;
+            GetComponentInChildren<Waterrespawn>().enabled = true;
+
             Move = true;
         }
     }
@@ -37,7 +40,9 @@ public class Water : MonoBehaviour
         Move = false;
         GetComponentInChildren<AreaEffector2D>().enabled = true;
         GetComponentInChildren<TilemapCollider2D>().usedByEffector = true;
+        GetComponentInChildren<TilemapCollider2D>().isTrigger = false;
         GetComponentInChildren<RespawnScript>().enabled = false;
+        GetComponentInChildren<Waterrespawn>().enabled = false;
         gameObject.transform.position = transform.position;
     }
 }

@@ -12,6 +12,7 @@ TagManager:
   - Health
   - Target
   - water
+  - Sound
   layers:
   - Default
   - TransparentFX

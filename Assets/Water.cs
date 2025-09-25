@@ -15,7 +15,7 @@ public class Water : MonoBehaviour
 
         if (Move)
         {
-            newpos = Vector3.MoveTowards(transform.position, Target.position, 3f * Time.deltaTime);
+            newpos = Vector3.MoveTowards(transform.position, Target.position, 2f * Time.deltaTime);
             transform.position = newpos;
         }
     }

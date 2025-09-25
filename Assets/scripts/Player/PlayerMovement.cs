@@ -12,8 +12,10 @@ public class PlayerMovement : MonoBehaviour
     private float rayDistance = 0.25f;
     private float coyoteTime = 0.1f;
     private float coyoteTimeCounter;
-    private float jumpBufferTime = 0.2f;
+    private float jumpBufferTime = 0.1f;
     private float jumpBufferCounter;
+    private float jumpCutDelay = 0.2f;
+    private float jumpCutDelayTimer;
     
     // private bool DoubleJumping;
     // private bool Jumped;
@@ -67,11 +69,17 @@ public class PlayerMovement : MonoBehaviour
         if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
         {
             Jump();
+            jumpCutDelayTimer = jumpCutDelay;
             coyoteTimeCounter = 0f;
             jumpBufferCounter = 0f;
         }
+        
+        if (jumpCutDelayTimer > 0)
+        {
+            jumpCutDelayTimer -= Time.deltaTime;
+        }
 
-        if (Input.GetButtonUp("Jump") && rb.linearVelocityY > 0) // cut jump height when releasing jump button
+        if (jumpCutDelayTimer <= 0f && Input.GetButtonUp("Jump") && rb.linearVelocityY > 0) // cut jump height when releasing jump button
         {
             rb.linearVelocity = new Vector2(rb.linearVelocityX, rb.linearVelocityY * 0.5f);
         }

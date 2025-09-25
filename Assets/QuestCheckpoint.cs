@@ -8,6 +8,7 @@ public class QuestCheckpoint : MonoBehaviour
     [SerializeField] private int NextLevel;
     private Animator anim;
     private bool LoadingLevel = false;
+    
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class QuestCheckpoint : MonoBehaviour
                 dialoguebox.SetActive(true);
                 textfinished.SetActive(true);
                 anim.SetTrigger("Finished");
+                other.GetComponent<TimerController>().EndTimer();
                 // lvl CHANGE
                 Invoke("LoadLevel", 2.0f);
                 LoadingLevel = true;

@@ -755,7 +755,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_28
+      name: WoodenGate1
       rect:
         serializedVersion: 2
         x: 208
@@ -777,7 +777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_29
+      name: WoodenGate2
       rect:
         serializedVersion: 2
         x: 224
@@ -1019,7 +1019,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_40
+      name: WoodenGate3
       rect:
         serializedVersion: 2
         x: 208
@@ -1041,7 +1041,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Terrain (16x16)_41
+      name: WoodenGate4
       rect:
         serializedVersion: 2
         x: 224
@@ -3393,16 +3393,12 @@ TextureImporter:
       Terrain (16x16)_25: -219710539
       Terrain (16x16)_26: 249800999
       Terrain (16x16)_27: -437912642
-      Terrain (16x16)_28: 1828524803
-      Terrain (16x16)_29: 964043657
       Terrain (16x16)_3: 397718093594370940
       Terrain (16x16)_30: 1492621556
       Terrain (16x16)_34: 886814607
       Terrain (16x16)_35: 1740282853
       Terrain (16x16)_36: 937965058
       Terrain (16x16)_4: 4716054802376701170
-      Terrain (16x16)_40: -287338046
-      Terrain (16x16)_41: 1097755265
       Terrain (16x16)_42: -634095306
       Terrain (16x16)_43: 1588384746
       Terrain (16x16)_44: -618204268
@@ -3463,6 +3459,10 @@ TextureImporter:
       WallBot: 1072074188
       WallMid: 451228769
       WallTop: -1077798388
+      WoodenGate1: 1828524803
+      WoodenGate2: 964043657
+      WoodenGate3: -287338046
+      WoodenGate4: 1097755265
       platformLeft: -890565529
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0

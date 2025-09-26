@@ -35,7 +35,7 @@ public class DEStimer : MonoBehaviour
 
     public void EndTimer()
     {
-        timerGoing = false;
+        gameObject.SetActive(false);
     }
 
     private IEnumerator UpdateTimer()

@@ -4,6 +4,9 @@ using UnityEngine.SceneManagement;
 public class castletrigger : MonoBehaviour
 {
     [SerializeField] private Camera Cam;
+    [SerializeField] private string LvlName;
+    [SerializeField] private float LevelLoadDelay = 3.21f;
+    private bool load = true;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,7 +18,7 @@ public class castletrigger : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag("Player"))
         {
@@ -23,12 +26,16 @@ public class castletrigger : MonoBehaviour
             other.gameObject.GetComponent<PlayerMovement>().enabled = false;
             other.gameObject.GetComponent<Animator>().Play("PinkRun", -1);
             other.gameObject.GetComponent<Animator>().SetFloat("MoveSpeed", 0.2f);
-            Invoke("LoadLevel", 3.21f);
-            
+            other.gameObject.transform.position += new Vector3(0.05f, 0f);
+            if (load)
+            {
+                load = false;
+                Invoke("LoadLevel", LevelLoadDelay);
+            }
         }
     }
     void LoadLevel()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene(LvlName);
     }
 }

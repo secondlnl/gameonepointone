@@ -11,11 +11,11 @@ public class Water : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        print("fu: " + gameObject.transform.position);
+        // print("fu: " + gameObject.transform.position);
 
         if (Move)
         {
-            newpos = Vector3.MoveTowards(transform.position, Target.position, 3f * Time.deltaTime);
+            newpos = Vector3.MoveTowards(transform.position, Target.position, 2.3f * Time.deltaTime);
             transform.position = newpos;
         }
     }
@@ -23,7 +23,7 @@ public class Water : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player") && Move == false)
         {
-            print("COLL");
+            // print("COLL");
             GetComponentInChildren<AreaEffector2D>().enabled = false;
             GetComponentInChildren<TilemapCollider2D>().usedByEffector = false;
             GetComponentInChildren<TilemapCollider2D>().isTrigger = true;
@@ -45,14 +45,14 @@ public class Water : MonoBehaviour
             // GameObject.FindWithTag("Player").GetComponent<PlayerHealth>().CurrentHealth = 5;
             GetComponentInChildren<RespawnScript>().enabled = false;
             transform.position = new Vector3(0.06f, -0.01f, -0.14f);
-            print(": " + gameObject.transform.position);
+            // print(": " + gameObject.transform.position);
             GameObject.FindGameObjectWithTag("Sound").GetComponent<AudioSource>().pitch = 1;
             GetComponentInChildren<Waterrespawn>().enabled = false;
             transform.position = new Vector3(0.06f, -0.01f, -0.14f);
 
 
         }
-        print("after: " + gameObject.transform.position);
+        // print("after: " + gameObject.transform.position);
 
     }
 }

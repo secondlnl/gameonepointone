@@ -54,6 +54,10 @@ public class EnemyMovement : MonoBehaviour
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             dead = true;
+            if (GameObject.FindGameObjectWithTag("QUEST"))
+            {
+                GameObject.FindGameObjectWithTag("QUEST").GetComponent<newquest>().killed(1);
+            }
             Destroy(gameObject, 0.6f);
         }
     }

@@ -335,7 +335,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Get 10 cherries and get rid of those walking stones
+  m_text: Get 4 cherries and get rid of those walking stones
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: f65891bebb9098c45836a2f58bf30ffb, type: 2}
   m_sharedMaterial: {fileID: -9020848041808832747, guid: f65891bebb9098c45836a2f58bf30ffb, type: 2}

@@ -392,6 +392,7 @@ MonoBehaviour:
   RedHealth: {r: 1, g: 0.13147238, b: 0, a: 1}
   SpawnPosition: {fileID: 0}
   HealthSound: {fileID: 8300000, guid: 8cd0df51326a09a4a9cb8cfbe13a7f43, type: 3}
+  HealPart: {fileID: 1006035787973729097, guid: 5af054e0de42b71489ce8a685d60f345, type: 3}
 --- !u!1 &4128982322205234633
 GameObject:
   m_ObjectHideFlags: 0

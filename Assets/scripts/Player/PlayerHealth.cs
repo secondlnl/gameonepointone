@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Transform SpawnPosition;
     private AudioSource audi;
     [SerializeField] private AudioClip HealthSound;
+    [SerializeField] private GameObject HealPart;
 
     private Rigidbody2D rb;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -54,6 +55,7 @@ public class PlayerHealth : MonoBehaviour
         else
         {
             audi.PlayOneShot(HealthSound, 0.45f);
+            Instantiate(HealPart, healthPickUp.transform.position, Quaternion.identity);
             CurrentHealth += healthToRestore;
             UpdateHealthBar();
             Destroy(healthPickUp);

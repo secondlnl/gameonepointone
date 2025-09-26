@@ -3,7 +3,7 @@ using UnityEngine;
 public class WoodenGate : MonoBehaviour
 {
     private Animator anim;
-    private bool hasPlayed;
+    private bool hasPlayed = false;
 
     void Start()
     {
@@ -17,8 +17,16 @@ public class WoodenGate : MonoBehaviour
             //Quest complete
         {
             hasPlayed = true;
-            anim.SetTrigger("Lower");
+            Invoke("LowerGate", 2.0f);
         }
 
+    }
+
+    private void LowerGate()
+    {
+        if (hasPlayed)
+        {
+            anim.SetTrigger("Lower");
+        }
     }
 }

@@ -720,7 +720,7 @@ GameObject:
   m_Component:
   - component: {fileID: 98293810}
   - component: {fileID: 98293811}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -936,7 +936,7 @@ GameObject:
   m_Component:
   - component: {fileID: 138773208}
   - component: {fileID: 138773209}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1206,7 +1206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 173017975}
   - component: {fileID: 173017976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2131,7 +2131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 327290255}
   - component: {fileID: 327290256}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2271,9 +2271,12 @@ GameObject:
   m_Component:
   - component: {fileID: 358886408}
   - component: {fileID: 358886407}
-  m_Layer: 0
+  - component: {fileID: 358886409}
+  - component: {fileID: 358886410}
+  - component: {fileID: 358886411}
+  m_Layer: 10
   m_Name: WoodenGate
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2339,6 +2342,110 @@ Transform:
   - {fileID: 327290255}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &358886409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358886406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 126d4957604aed64f9fffc98bde5aaf8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!61 &358886410
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358886406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -13.4255295, y: 1.2461014}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 2.9290009, y: 2.6126022}
+  m_EdgeRadius: 0
+--- !u!61 &358886411
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 358886406}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: -0.9692383, y: 5.9696465}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Size: {x: 1.9842529, y: 12.004082}
+  m_EdgeRadius: 0
 --- !u!1 &369594444
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,7 +2456,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369594445}
   - component: {fileID: 369594446}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2472,7 +2579,7 @@ GameObject:
   m_Component:
   - component: {fileID: 387605505}
   - component: {fileID: 387605506}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3564,7 +3671,7 @@ GameObject:
   m_Component:
   - component: {fileID: 575041158}
   - component: {fileID: 575041159}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3651,7 +3758,7 @@ GameObject:
   m_Component:
   - component: {fileID: 585823031}
   - component: {fileID: 585823032}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4049,7 +4156,7 @@ GameObject:
   m_Component:
   - component: {fileID: 646993589}
   - component: {fileID: 646993590}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4136,7 +4243,7 @@ GameObject:
   m_Component:
   - component: {fileID: 648093375}
   - component: {fileID: 648093376}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4712,7 +4819,7 @@ Transform:
   m_GameObject: {fileID: 724746339}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -55.6, y: 35.9, z: 0}
+  m_LocalPosition: {x: 135.23, y: 41.97, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5599,7 +5706,7 @@ GameObject:
   m_Component:
   - component: {fileID: 837533841}
   - component: {fileID: 837533842}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5743,7 +5850,7 @@ GameObject:
   m_Component:
   - component: {fileID: 847664479}
   - component: {fileID: 847664480}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate4 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5830,7 +5937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 862785295}
   - component: {fileID: 862785296}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5948,7 +6055,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 47682, y: 13244}
+  m_AnchoredPosition: {x: 53681, y: 17403}
   m_SizeDelta: {x: 1349, y: 343}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &902436971
@@ -6184,7 +6291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 957428277}
   - component: {fileID: 957428278}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6271,7 +6378,7 @@ GameObject:
   m_Component:
   - component: {fileID: 961282244}
   - component: {fileID: 961282245}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7916,7 +8023,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1227916185}
   - component: {fileID: 1227916186}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1 (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8422,7 +8529,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1304877294}
   - component: {fileID: 1304877295}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8746,7 +8853,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1325553122}
   - component: {fileID: 1325553123}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1 (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9882,7 +9989,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1470163585}
   - component: {fileID: 1470163586}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10652,7 +10759,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1646024759}
   - component: {fileID: 1646024760}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19227,7 +19334,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1732915439}
   - component: {fileID: 1732915440}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20084,7 +20191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1941910147}
   - component: {fileID: 1941910148}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate3 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20944,7 +21051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2112846707}
   - component: {fileID: 2112846708}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate2 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21257,7 +21364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2142390450}
   - component: {fileID: 2142390451}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: WoodenGate1 (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21404,11 +21511,11 @@ PrefabInstance:
       objectReference: {fileID: 566367258}
     - target: {fileID: 6581368353874307920, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -59.6
+      value: 126.9
       objectReference: {fileID: 0}
     - target: {fileID: 6581368353874307920, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1
+      value: 41.46
       objectReference: {fileID: 0}
     - target: {fileID: 6581368353874307920, guid: 16e0ddb15a6e4804db6742315b438924, type: 3}
       propertyPath: m_LocalPosition.z

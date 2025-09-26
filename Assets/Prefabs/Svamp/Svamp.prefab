@@ -197,7 +197,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   target: {fileID: 0}
-  svampCloud: {fileID: 3466056471984673817, guid: 086c4431c81880b40ac599fb1db04db0, type: 3}
+  svampExplosion: {fileID: 7895061342772387261, guid: a92f341237b48d54eabdcb2c69589147, type: 3}
 --- !u!61 &2333620141625535574
 BoxCollider2D:
   m_ObjectHideFlags: 0

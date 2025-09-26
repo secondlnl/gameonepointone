@@ -886,7 +886,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_packed_33
+      name: Water1
       rect:
         serializedVersion: 2
         x: 234
@@ -1326,7 +1326,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_packed_53
+      name: Water2
       rect:
         serializedVersion: 2
         x: 234
@@ -1766,7 +1766,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: tilemap_packed_73
+      name: Water3
       rect:
         serializedVersion: 2
         x: 234
@@ -4133,6 +4133,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      Water1: -1307015045
+      Water2: -38180130
+      Water3: 1748515010
       cloud1: 2050394792
       cloud2: 1003250109
       cloud4: -1446761772
@@ -4240,7 +4243,6 @@ TextureImporter:
       tilemap_packed_30: -286075463
       tilemap_packed_31: 1363757003
       tilemap_packed_32: 704294283
-      tilemap_packed_33: -1307015045
       tilemap_packed_34: -207558278
       tilemap_packed_35: -702202835
       tilemap_packed_36: -1390904944
@@ -4262,7 +4264,6 @@ TextureImporter:
       tilemap_packed_50: 825633624
       tilemap_packed_51: -1571557592
       tilemap_packed_52: -1245359843
-      tilemap_packed_53: -38180130
       tilemap_packed_54: -1366760924
       tilemap_packed_55: 1357917863
       tilemap_packed_56: 117176936
@@ -4284,7 +4285,6 @@ TextureImporter:
       tilemap_packed_70: -2109864717
       tilemap_packed_71: 1425705524
       tilemap_packed_72: -1869443984
-      tilemap_packed_73: 1748515010
       tilemap_packed_74: 1427484374
       tilemap_packed_75: 1900590049
       tilemap_packed_76: -1387255921

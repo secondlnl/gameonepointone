@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,11 +11,15 @@ public class newquest : MonoBehaviour
     [Header("")]
     [SerializeField] private GameObject Textpopup;
     [SerializeField] private GameObject EnemyKillUI;
+    public bool Finished = false;
+    private SpriteRenderer giversr;
     private int killedcount = 0;
+    // private GameObject[] ba;
     void OnTriggerEnter2D(Collider2D other)
     {
-        print(Mathf.Abs(GameObject.FindGameObjectsWithTag("Enemy").Length - EnemyGoal));
-        print(":" + GameObject.FindGameObjectsWithTag("Enemy").Length);
+        // ba = GameObject.FindGameObjectsWithTag("Enemy");
+        // print(Mathf.Abs(GameObject.FindGameObjectsWithTag("Enemy").Length - EnemyGoal));
+        // print("len:" + GameObject.FindGameObjectsWithTag("Enemy").Length);
         if (other.CompareTag("Player"))
         {
             Textpopup.SetActive(true);
@@ -22,8 +27,7 @@ public class newquest : MonoBehaviour
         }
         if (other.CompareTag("Player") && EnemyKillUI.activeInHierarchy == true && other.GetComponent<PlayerPickups>().CherryCount >= CherryGoal && EnemyGoal == Mathf.Abs(GameObject.FindGameObjectsWithTag("Enemy").Length - EnemyGoal))
         {
-            PlayerPrefs.SetString("LevelThree", "0");
-            SceneManager.LoadScene(0);
+            Finished = true;
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -35,5 +39,17 @@ public class newquest : MonoBehaviour
     {
         killedcount += amount;
         EnemyKillUI.GetComponentInChildren<TMP_Text>().text = killedcount.ToString();
+    }
+    void Start()
+    {
+        giversr = GetComponentInChildren<SpriteRenderer>();
+    }
+    void Update()
+    {
+        if (GameObject.FindGameObjectWithTag("Player").transform.position.x > giversr.gameObject.transform.position.x)
+        {
+            giversr.flipX = false;
+        }
+        else giversr.flipX = true;
     }
 }

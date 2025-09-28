@@ -2,13 +2,12 @@ using UnityEngine;
 
 public class MovingClouds : MonoBehaviour
 {
-    public GameObject cloudPrefab; // The cloud prefab
-    public float spawnInterval = 2f; // Time between spawns
-    public Transform[] spawnPoints; // Array of spawn points
+    public GameObject cloudPrefab;
+    public float spawnInterval = 2f;
+    public Transform[] spawnPoints;
 
     private void Start()
     {
-        // Start spawning clouds
         InvokeRepeating("SpawnCloud", 0f, spawnInterval);
     }
 
@@ -16,16 +15,11 @@ public class MovingClouds : MonoBehaviour
     {
         if (spawnPoints.Length == 0)
         {
-            Debug.Log("No spawn points available.");
-            return; // No spawn points available
+            return;
         }
-
-        // Choose a random spawn point
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-
-        // Instantiate the cloud prefab at the spawn point
+        cloudPrefab.transform.localScale = Random.Range(0.5f, 1f) * Vector3.one;
         Instantiate(cloudPrefab, spawnPoint.position, Quaternion.identity);
-        Debug.Log("Spawned cloud at: " + spawnPoint.position);
     }
     
 }

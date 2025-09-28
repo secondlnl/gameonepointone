@@ -25,7 +25,7 @@ public class Cloud : MonoBehaviour
         startPosition = transform.position;
 
         sr = GetComponent<SpriteRenderer>();
-        sr.sortingOrder = Random.Range(-1, 2);
+         //sr.sortingOrder = Random.Range(-1, 2);
 
         // Randomize sine wave parameters
         floatDistance = Random.Range(minFloatDistance, maxFloatDistance);

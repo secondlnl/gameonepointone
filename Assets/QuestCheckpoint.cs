@@ -8,7 +8,7 @@ public class QuestCheckpoint : MonoBehaviour
     [SerializeField] private int NextLevel;
     private Animator anim;
     private bool LoadingLevel = false;
-    
+
 
     void Start()
     {
@@ -33,8 +33,9 @@ public class QuestCheckpoint : MonoBehaviour
             }
 
     }
-    private void LoadLevel() {
-        PlayerPrefs.SetString("LevelTwo", "0");
+    private void LoadLevel()
+    {
+        PlayerPrefs.SetString("LevelThree", "0");
         SceneManager.LoadScene(NextLevel);
     }
     void OnTriggerExit2D(Collider2D other)

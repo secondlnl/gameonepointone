@@ -47,7 +47,7 @@ public class DisappearingPlatform : MonoBehaviour
             {
                 print("COLL CALL:" + Active);
                 Touched = true;
-                GetComponent<BoxCollider2D>().enabled = false;
+                Invoke("Box", 0.5f);
                 Active = false;
                 Invoke("On", 10f);
             }
@@ -58,6 +58,11 @@ public class DisappearingPlatform : MonoBehaviour
         Touched = false;
         Active = true;
         GetComponent<BoxCollider2D>().enabled = true;
+
+    }
+    private void Box()
+    {
+        GetComponent<BoxCollider2D>().enabled = false;
 
     }
 }

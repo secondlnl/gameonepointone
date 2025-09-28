@@ -11,7 +11,7 @@ public class MENU : MonoBehaviour
     [SerializeField] private GameObject LevelThreeButton;
     [SerializeField] private GameObject LevelFourButton;
     [SerializeField] private GameObject LevelFiveButton;
-    [SerializeField] private int[] unlocked; // Contains the lvls unlocked 
+    // [SerializeField] private int[] unlocked; // Contains the lvls unlocked 
 
     public void QuitGame()
     {
@@ -35,7 +35,7 @@ public class MENU : MonoBehaviour
         switch (lvllocked)
         {
             case 1:
-                returnval = LevelOneButton.GetComponentsInChildren<Lock>()[0].locked;
+                LevelOneButton.GetComponentInChildren<Lock>().locked = returnval;
                 break;
             case 2:
                 LevelTwoButton.GetComponentInChildren<Lock>().locked = returnval;

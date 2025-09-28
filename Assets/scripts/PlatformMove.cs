@@ -15,8 +15,21 @@ public class PlatformMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (transform.position == TargetStart.position) CurrentTarget = TargetEnd;
-        if (transform.position == TargetEnd.position) CurrentTarget = TargetStart;
+        float distanceToTarget = Vector2.Distance(transform.position, CurrentTarget.position);
+
+        if (distanceToTarget < 0.1f)
+        {
+            if (CurrentTarget == TargetStart)
+            {
+                CurrentTarget = TargetEnd;
+            }
+            else
+            {
+                CurrentTarget = TargetStart;
+            }
+        }
+            
+        
         transform.position = Vector2.MoveTowards(transform.position, CurrentTarget.position, moveSpeed * Time.deltaTime);
     }
     private void OnCollisionEnter2D(Collision2D other)

@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="45fe8e6b-3bbb-471a-b4f6-9c2324e7cb3f" name="Changes" comment="" />
+    <list default="true" id="45fe8e6b-3bbb-471a-b4f6-9c2324e7cb3f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.gameonepointone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.gameonepointone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Tests/NewLevel1Tutorial.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Tests/NewLevel1Tutorial.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/VCR_OSD_MONO_1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/VCR_OSD_MONO_1.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -109,7 +113,7 @@
       <workItem from="1758362135858" duration="13000" />
       <workItem from="1758362176018" duration="2671000" />
       <workItem from="1758759319734" duration="22465000" />
-      <workItem from="1759068640451" duration="2831000" />
+      <workItem from="1759068640451" duration="6317000" />
     </task>
     <servers />
   </component>

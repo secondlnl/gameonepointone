@@ -35123,7 +35123,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -126687,7 +126687,7 @@ AudioSource:
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 8300000, guid: 2eb47fcb5f4de834b8941f57e19b133f, type: 3}
+  m_Resource: {fileID: 8300000, guid: e93e3b5be9e85da47b11c95cafb077f1, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.092
   m_Pitch: 1

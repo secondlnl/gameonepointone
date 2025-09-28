@@ -6,6 +6,7 @@ public class QuestCheckpoint : MonoBehaviour
     [SerializeField] private GameObject dialoguebox, textnotfinished, textfinished;
     [SerializeField] private int QuestGoal = 10;
     [SerializeField] private int NextLevel;
+    [SerializeField] private GameObject trigger;
     private Animator anim;
     private bool LoadingLevel = false;
 
@@ -21,10 +22,7 @@ public class QuestCheckpoint : MonoBehaviour
                 dialoguebox.SetActive(true);
                 textfinished.SetActive(true);
                 anim.SetTrigger("Finished");
-                other.GetComponent<TimerController>().EndTimer();
-                // lvl CHANGE
-                Invoke("LoadLevel", 2.0f);
-                LoadingLevel = true;
+                Invoke("Trigger", 2.0f);
             }
             else
             {
@@ -33,11 +31,11 @@ public class QuestCheckpoint : MonoBehaviour
             }
 
     }
-    private void LoadLevel()
+    private void Trigger()
     {
-        PlayerPrefs.SetString("LevelThree", "0");
-        SceneManager.LoadScene(NextLevel);
+        trigger.SetActive(true);
     }
+
     void OnTriggerExit2D(Collider2D other)
     {
         if (other.CompareTag("Player") && LoadingLevel == false)

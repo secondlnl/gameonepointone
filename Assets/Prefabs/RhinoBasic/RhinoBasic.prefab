@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 2015890483905924790}
   - component: {fileID: 7611989015824936291}
   - component: {fileID: 6830564022311978136}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RhinoBasic
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

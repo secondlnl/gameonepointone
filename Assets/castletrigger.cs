@@ -24,8 +24,10 @@ public class castletrigger : MonoBehaviour
         {
 
             other.gameObject.GetComponent<PlayerMovement>().enabled = false;
-            other.gameObject.GetComponent<Animator>().Play("PinkRun", -1);
+            other.gameObject.GetComponent<Animator>().Play("PinkRun");
             other.gameObject.GetComponent<Animator>().SetFloat("MoveSpeed", 0.2f);
+            other.gameObject.GetComponent<Animator>().SetFloat("VerticalSpeed", 0f);
+
             other.gameObject.transform.position += new Vector3(0.05f, 0f);
             if (load)
             {
@@ -36,6 +38,7 @@ public class castletrigger : MonoBehaviour
     }
     void LoadLevel()
     {
+        print("LOAD");
         SceneManager.LoadScene(LvlName);
     }
 }

@@ -12,7 +12,7 @@ public class RhinoBasic : MonoBehaviour
     [SerializeField] private AudioClip HitSound;
     [SerializeField] private Transform target1, target2;
     [SerializeField] private float rayRadius = 10f;
-    
+
     private SpriteRenderer sr;
     private bool dead = false;
     private bool canSeePlayer;
@@ -33,7 +33,7 @@ public class RhinoBasic : MonoBehaviour
     private void FixedUpdate()
     {
         if (dead) return;
-        
+
         if (transform.position == target1.position)
         {
             currentTarget = target2;
@@ -86,6 +86,10 @@ public class RhinoBasic : MonoBehaviour
             GetComponent<CircleCollider2D>().enabled = false;
             GetComponent<Rigidbody2D>().gravityScale = 0;
             GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            if (GameObject.FindGameObjectWithTag("QUEST"))
+            {
+                GameObject.FindGameObjectWithTag("QUEST").GetComponent<newquest>().killed(1);
+            }
             dead = true;
             Destroy(gameObject, 0.6f);
         }
@@ -95,7 +99,7 @@ public class RhinoBasic : MonoBehaviour
     {
         RaycastHit2D playerSeen = Physics2D.CircleCast(eyes.position, rayRadius, Vector2.one, rayRadius, whatIsPlayer);
 
-        if(playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
+        if (playerSeen.collider != null && playerSeen.collider.CompareTag("Player"))
         {
             canSeePlayer = true;
             GetComponent<Animator>().SetBool("CanSeePlayer", true);

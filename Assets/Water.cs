@@ -18,6 +18,10 @@ public class Water : MonoBehaviour
             newpos = Vector3.MoveTowards(transform.position, Target.position, 2.3f * Time.deltaTime);
             transform.position = newpos;
         }
+        if (transform.position == (Vector3)newpos)
+        {
+            GetComponentInChildren<TilemapCollider2D>().enabled = true;
+        }
     }
     void OnTriggerEnter2D(Collider2D other)
     {

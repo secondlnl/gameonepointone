@@ -13,7 +13,7 @@ public class newquest : MonoBehaviour
     [SerializeField] private GameObject EnemyKillUI;
     public bool Finished = false;
     private SpriteRenderer giversr;
-    private int killedcount = 0;
+    [SerializeField] private int killedcount = 0;
     // private GameObject[] ba;
     void OnTriggerEnter2D(Collider2D other)
     {

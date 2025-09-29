@@ -20,6 +20,7 @@ public class triggerhappy : MonoBehaviour
     }
     private void LoadLvl()
     {
+        PlayerPrefs.SetString("LevelTwo", "0");
         SceneManager.LoadScene(2);
     }
 }

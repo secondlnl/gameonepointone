@@ -25,7 +25,10 @@ public class newquest : MonoBehaviour
             Textpopup.SetActive(true);
             EnemyKillUI.SetActive(true);
         }
-        if (other.CompareTag("Player") && EnemyKillUI.activeInHierarchy == true && other.GetComponent<PlayerPickups>().CherryCount >= CherryGoal && EnemyGoal == Mathf.Abs(GameObject.FindGameObjectsWithTag("Enemy").Length - EnemyGoal))
+        if (other.CompareTag("Player")
+        && EnemyKillUI.activeInHierarchy == true
+        && other.GetComponent<PlayerPickups>().CherryCount >= CherryGoal
+        && killedcount >= EnemyGoal)
         {
             Finished = true;
         }

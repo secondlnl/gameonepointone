@@ -8,7 +8,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private Image fillcolor;
     [SerializeField] private Color greenHealth, RedHealth;
-    [SerializeField] private Transform SpawnPosition;
+    public Transform SpawnPosition;
     private AudioSource audi;
     [SerializeField] private AudioClip HealthSound;
     [SerializeField] private GameObject HealPart;

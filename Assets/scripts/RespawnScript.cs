@@ -10,6 +10,7 @@ public class RespawnScript : MonoBehaviour
         {
             player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             player.transform.position = respawnPoint.transform.position;
+            other.GetComponent<PlayerHealth>().SpawnPosition = respawnPoint.transform;
         }
     }
 }

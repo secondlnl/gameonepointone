@@ -39,6 +39,7 @@ public class castletrigger : MonoBehaviour
     void LoadLevel()
     {
         print("LOAD");
+        PlayerPrefs.SetString("LevelThree", "0");
         SceneManager.LoadScene(LvlName);
     }
 }
